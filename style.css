@@ -1,0 +1,93 @@
+body {
+    color: rgb(134, 21, 21);
+    background-color: #5576b8;
+    font-family: 'Jameel Noori Nastaleeq', sana-serif;
+    text-align: right;
+}
+
+.stButton>button {
+    color: #83526f;
+    border-radius: 50%;
+    height: 3em;
+    width: 3em;
+    float: right;
+}
+
+.stTextInput>div>div>input {
+    color: #000000;
+    font-size: 30px;
+    background-color: #59dfd3;
+}
+.stSelectBox>div>div>input {
+    color: #ffffff;
+    background-color: rgb(117, 192, 192);
+}
+.urdu-font {
+    font-size:30px !important;
+    font-family: 'Jameel Noori Nastaleeq', sana-serif;
+    text-align: right;
+}
+.urdu-font-big {
+    font-size:75px !important;
+    font-family: 'Jameel Noori Nastaleeq', sana-serif;
+    text-align: right;
+}
+div.css-1hynsf2.e1tzin5v1{
+  font-family: 'Jameel Noori Nastaleeq', sana-serif;
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgb(49, 51, 63);    
+  text-align: right;
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  font-size: 30px;
+}
+div.row-widget.stSelectbox{
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    font-size: 20px;
+    display:inline-block;
+    text-align: right;
+    align-items: end;
+    font-size: 40px;
+    background-color: rgb(163, 216, 166); 
+}
+div.row-widget.stTextInput.css-pb6fr7{
+
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    font-size: 20px;
+}
+/* div.css-1kyxreq{
+    border: 2px solid rgb(53, 255, 3);
+    border-style: double;
+} */
+div.row-widget.stRadio {
+    direction: rtl;
+    font-family: 'Jameel Noori Nastaleeq', sana-serif;
+    color: rgb(179, 20, 20);
+    display:inline-block;
+    text-align: right;
+    align-items: end;}
+
+div.row-widget.stCheckbox{
+    direction: rtl;
+    font-family: 'Jameel Noori Nastaleeq', sana-serif;
+    display:inline-block;
+    text-align: right;
+    align-items: end;}
+
+.css-po3vlj.exg6vvm0{
+    flex-direction: row-reverse;
+    background-color: #a6dfda;
+
+}
+.css-qrbaxs.effi0qh0{
+    font-size: 30px;
+}
+.st-bw.st-ca.st-cb.st-ae.st-af.st-ag.st-ah.st-ai.st-aj{
+    font-family: 'Jameel Noori Nastaleeq', sana-serif;
+    line-height: 1;
+    font-size: 20px;
+
+}
