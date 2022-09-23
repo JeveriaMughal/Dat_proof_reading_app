@@ -1,5 +1,4 @@
 import streamlit as st
-import os
 import pandas as pd
 
 if 'num' not in st.session_state:
@@ -68,16 +67,6 @@ def app():
                 else:
                     st.stop()
 
-    # with st.form("myform"):
-    #     df=pd.DataFrame(columns=['index','ENG', 'URDU','status','comment'])
-    #     data=pd.read_csv("dania.csv")
-    #     df=pd.concat([df,data],ignore_index = True, axis = 0)
-    #     lines_done=(len(df.index))
-    #     data=sentence_form(lines_done)
-    #     submitted = st.form_submit_button("OK")
-    #     if submitted:
-    #         df=pd.concat([df,data],ignore_index = True, axis = 0)
-    #         df.to_csv("dania.csv",index=False)
 
 
 
