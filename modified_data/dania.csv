@@ -1,60 +1,90 @@
-index,ENG,URDU,status,comment
+index,ENG,URDU,status,comment,date
 0,"Put up for decision
 ","برائے منظوری پیش کریں۔
-",APPROVED,
+",APPROVED,,2022-9-23
 1,put up for consideration,"برائے غور پیش کریں۔
-",CORRECTED,
+",CORRECTED,,2022-9-23
 2,Put up for decision,"برائے فیصلہ پیش کریں۔
-",CORRECTED,
+",CORRECTED,,2022-9-24
 3,Put up on date,"تاریخ کو پیش کریں۔
-",CORRECTED,
+",CORRECTED,,2022-9-24
 4,"Put up on next Monday.
 ","آئندہ پیر کو پیش کریں۔
-",APPROVED,
+",APPROVED,,2022-9-25
 5,"Put up next week.
 ","اگلے ہفتے پیش کریں۔
-",APPROVED,
+",APPROVED,,2022-9-25
 6,Put up on return of the  concerned officer.,"متعلقہ افسر کی واپسی پر پیش کریں۔
-",CORRECTED,
+",CORRECTED,,2022-9-26
 7,"Put up to the Secretary today.
-",آج سیکریٹری کو پیش کی جائے۔,CORRECTED,
+",آج سیکریٹری کو پیش کی جائے۔,CORRECTED,,2022-9-26
 8,Put up directly to the Minister.,"براہ راست وزیر کو پیش کیا جائے۔
-",CORRECTED,
-9,present personally.,خود ہی پیش کیجیے,CORRECTED,
+",CORRECTED,,2022-9-27
+9,present personally.,خود ہی پیش کیجیے,CORRECTED,,2022-9-27
 10,"Put up previous papers.
 ","سابقہ کاغذ پیش کیے جائیں۔
-",APPROVED,
+",APPROVED,,2022-9-28
 11,"Put up relevant papers
-",متعلقہ کاغذات پیش کیے جائیں۔,CORRECTED,
+",متعلقہ کاغذات پیش کیے جائیں۔,CORRECTED,,2022-9-28
 12,"Put up with previous papers.
-",سابقہ کاغذات کے ساتھ پیش کریں۔,CORRECTED,
+",سابقہ کاغذات کے ساتھ پیش کریں۔,CORRECTED,,2022-9-29
 13,"Put up with the file
 ","مسل کے ساتھ پیش کریں۔
-",APPROVED,
+",APPROVED,,2022-9-29
 14,"Put up with the relevant file.
 ","متعلقہ مسل کے ساتھ پیش کریں۔
-",APPROVED,
+",APPROVED,,2022-9-30
 15,"Put up with previous file.
 ","سابقہ مسل کے ساتھ پیش کریں۔
-",APPROVED,
+",APPROVED,,2022-9-30
 16,"Put up with the relevant record.
 ","متعلقہ ریکارڈ کے ساتھ پیش کریں۔
-",APPROVED,
+",APPROVED,,2022-9-31
 17,"Put up as early as possible.
 ","جتنی جلد ممکن ہو پیش کریں۔
-",APPROVED,
+",APPROVED,,2022-9-24
 18,"Put up immediately.
 ","فوری پیش کریں۔
-",APPROVED,
+",APPROVED,,2022-9-24
 19,"Put up urgently.
 ","فوری پیش کریں۔
-",APPROVED,
+",APPROVED,,2022-9-25
 20,"Put up urgently.
 ","فی الفور پیش کریں۔
-",APPROVED,
+",APPROVED,,2022-9-25
 21,"Put up promptly.
 ","فوری پیش کریں۔
-",APPROVED,
+",APPROVED,,2022-9-26
 22,"Put up as promptly as possible.
 ","جتنی جلدی ممکن ہو پیش کریں۔
-",APPROVED,
+",APPROVED,,2022-9-26
+23,"Put up as soon as possible.
+","جتنی جلد ی ہو سکے پیش کریں۔
+",APPROVED,,2022-9-27
+24,"Put up without delay.
+","بلاتاخیر پیش کریں۔
+",APPROVED,,2022-9-27
+25,"Put up without further delay.
+","بلا مزید تاخیر پیش کریں۔
+",APPROVED,,2022-9-28
+26,"Put up the case with the least possible  delay.
+","مسل کو کم سے کم تاخیر سے پیش کریں۔
+",APPROVED,,2022-09-26
+27,"Put up draft as proposed at  'A' above
+","حسب تجویز ’’الف‘‘ بالا، مسودہ پیش کریں۔
+",APPROVED,,2022-09-26
+28,"Put up the case as required by the rule.
+","مسل حسب قاعدہ پیش کریں۔
+",APPROVED,,2022-09-26
+29,"Put up draft as suggested at 'A' above
+","حسب تجویز ’’الف‘‘ بالا، مسودہ پیش کریں۔
+",APPROVED,,2022-09-26
+30,"Put up the  case as verbally ordered  by Additional  Secretary
+","ایڈیشنل سیکریٹری کے زبانی حکم کے مطابق مسل پیش کریں۔
+",APPROVED,,2022-09-26
+31,"Put up after necessary preliminaries.
+","ابتدائی ضروری کارروائی کے بعد پیش کریں۔
+",APPROVED,,2022-09-26
+32,"Put up after necessary action.
+","ضروری کارروائی کے بعد پیش کریں۔
+",APPROVED,,2022-09-26
