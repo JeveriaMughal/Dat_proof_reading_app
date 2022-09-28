@@ -1,7 +1,9 @@
 import streamlit as st
 import pandas as pd
 import datetime
-
+import gspread
+from gspread_dataframe import get_as_dataframe, set_with_dataframe
+from oauth2client.service_account import ServiceAccountCredentials
 
 
 def local_css(file_name):
@@ -13,34 +15,43 @@ def sentence_form(lines_done):
     file2=open("master_data/MC_URDU.txt","r")
     urdu=file2.readlines()
     st.write("lines reviewed = ",lines_done)
-    default=""
-    col1,col2=st.columns(2)
-    with col1:
-        st.write("English")
-        st.title(english[lines_done])
-        correction_eng=st.text_input("Change sentence",value=default)
-    with col2:
-        st.write("اردو")
-        st.title(urdu[lines_done])
-        correction_urdu=st.text_input("جملہ تبدیل کریں",value=default)
-    comment=st.text_input("comment",value=default)
-    date = datetime.date.today()
-    if correction_eng != "" or correction_urdu != "":
-        status="CORRECTED"
+    if lines_done >= len(urdu) or lines_done >= len(english):
+        st.success("you have reviewed all the existing data allocated to you")
+        data =pd.DataFrame()
     else:
-        status="APPROVED"
-    if correction_urdu=="":
-        translation=urdu[lines_done]
-    else:
-        translation=correction_urdu
-    if correction_eng == "":
-        english_line = english[lines_done]
-    else:
-        english_line = correction_eng
-    data=pd.DataFrame({'ENG':[english_line],'URDU': [translation],'status':[status],'comment':[comment],'index':[lines_done],'date':[date]})
+        default=""
+        col1,col2=st.columns(2)
+        with col1:
+            st.write("English")
+            st.title(english[lines_done])
+            correction_eng=st.text_input("Change sentence",value=default)
+        with col2:
+            st.write("اردو")
+            st.title(urdu[lines_done])
+            correction_urdu=st.text_input("جملہ تبدیل کریں",value=default)
+        comment=st.text_input("comment",value=default)
+        date = datetime.date.today()
+        if correction_eng != "" or correction_urdu != "":
+            status="CORRECTED"
+        else:
+            status="APPROVED"
+        if correction_urdu=="":
+            translation=urdu[lines_done]
+        else:
+            translation=correction_urdu
+        if correction_eng == "":
+            english_line = english[lines_done]
+        else:
+            english_line = correction_eng
+        data=pd.DataFrame({'ENG':[english_line],'URDU': [translation],'status':[status],'comment':[comment],'index':[lines_done],'date':[date]})
     return data
     
 def app():
+    scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
+		"https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
+    # Assign credentials ann path of style sheet
+    creds = ServiceAccountCredentials.from_json_keyfile_name("blank-test-363706-5265bab97753.json", scope)
+    client = gspread.authorize(creds)
 
     if 'num' not in st.session_state:
         st.session_state.num = 1
@@ -56,31 +67,21 @@ def app():
             break
         else:        
             with placeholder.form(key=str(num)):
-                df=pd.DataFrame(columns=['index','ENG', 'URDU','status','comment','date'])
-                data=pd.read_csv("modified_data/dania.csv")
-                df=pd.concat([df,data],ignore_index = True, axis = 0)
+                # df=pd.DataFrame(columns=['index','ENG', 'URDU','status','comment','date'])
+                # data=pd.read_csv("modified_data/dania.csv")
+                # df=pd.concat([df,data],ignore_index = True, axis = 0)
+                sheet = client.open("modified_data").get_worksheet(1)
+                df = pd.DataFrame(sheet.get_all_records(),index=None)
                 lines_done=(len(df.index))
                 data=sentence_form(lines_done)
 
                 if st.form_submit_button('OK'):    
                     df=pd.concat([df,data],ignore_index = True, axis = 0)
-                    df.to_csv("modified_data/dania.csv",index=False)
+                    # df.to_csv("modified_data/dania.csv",index=False)
+                    sheet.clear()
+                    set_with_dataframe(worksheet=sheet, dataframe=df, include_index=False,include_column_header=True, resize=True)
                     st.session_state.num += 1
                     placeholder.empty()
                     placeholder2.empty()
                 else:
                     st.stop()
-
-    # with st.form("myform"):
-    #     df=pd.DataFrame(columns=['index','ENG', 'URDU','status','comment'])
-    #     data=pd.read_csv("dania.csv")
-    #     df=pd.concat([df,data],ignore_index = True, axis = 0)
-    #     lines_done=(len(df.index))
-    #     data=sentence_form(lines_done)
-    #     submitted = st.form_submit_button("OK")
-    #     if submitted:
-    #         df=pd.concat([df,data],ignore_index = True, axis = 0)
-    #         df.to_csv("dania.csv",index=False)
-
-
-
