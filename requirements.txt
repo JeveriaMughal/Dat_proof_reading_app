@@ -2,4 +2,4 @@ pandas
 datetime
 gspread
 oauth2client 
-gspread-dataframe==3.2.1
+gspread-dataframe==3.2.2
