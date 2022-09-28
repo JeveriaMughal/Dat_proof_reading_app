@@ -32,9 +32,10 @@ if selection == "جویریہ مغل":
             "text/csv",
             key='download-csv-jeveria')
     data=df
-    chart_data=pd.DataFrame(columns=['index','date'])
-    df1 = data['date'].value_counts()
-    st.sidebar.bar_chart(df1)
+    if len(df.index)>1:
+        chart_data=pd.DataFrame(columns=['index','date'])
+        df1 = data['date'].value_counts()
+        st.sidebar.bar_chart(df1)
 
 if selection == "دانیہ شفیق":
     st.sidebar.image("images/dania.JPG")   
@@ -48,9 +49,10 @@ if selection == "دانیہ شفیق":
             "text/csv",
             key='download-csv-dania')
     data=df
-    chart_data=pd.DataFrame(columns=['index','date'])
-    df1 = data['date'].value_counts()
-    st.sidebar.bar_chart(df1)
+    if len(df.index)>1:
+        chart_data=pd.DataFrame(columns=['index','date'])
+        df1 = data['date'].value_counts()
+        st.sidebar.bar_chart(df1)
 
 if selection == "پروفیسر ڈاکٹر رؤف پاریکھ":
     st.sidebar.image("images/DG Dr Rauf Parekh.png")
@@ -64,9 +66,10 @@ if selection == "پروفیسر ڈاکٹر رؤف پاریکھ":
             "text/csv",
             key='download-csv-parekh')
     data=df
-    chart_data=pd.DataFrame(columns=['index','date'])
-    df1 = data['date'].value_counts()
-    st.sidebar.bar_chart(df1)
+    if len(df.index)>1:
+        chart_data=pd.DataFrame(columns=['index','date'])
+        df1 = data['date'].value_counts()
+        st.sidebar.bar_chart(df1)
 
 
 page= PAGES[selection]
