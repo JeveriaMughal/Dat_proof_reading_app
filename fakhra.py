@@ -10,6 +10,7 @@ def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 def sentence_form(lines_done):
+    local_css("style.css")
     file1=open("master_data/MC_ENG_1.txt","r")
     english=file1.readlines()
     file2=open("master_data/MC_URDU_1.txt","r")
@@ -27,7 +28,8 @@ def sentence_form(lines_done):
             correction_eng=st.text_input("Change sentence",value=default)
         with col2:
             st.write("اردو")
-            st.title(urdu[lines_done])
+            # st.title(urdu[lines_done])
+            st.markdown('<h1 class="urdu-font-big">'+urdu[lines_done]+'</h1>', unsafe_allow_html=True)
             correction_urdu=st.text_input("جملہ تبدیل کریں",value=default)
         comment=st.text_input("comment",value=default)
         date = datetime.date.today()
