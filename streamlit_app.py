@@ -3,6 +3,7 @@ import fakhra,bugti,rauf_parekh
 import pandas as pd
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+st.set_page_config(layout="wide")
 
 def local_css(file_name):
     with open(file_name) as f:
