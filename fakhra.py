@@ -6,6 +6,7 @@ from gspread_dataframe import get_as_dataframe, set_with_dataframe
 from oauth2client.service_account import ServiceAccountCredentials
 
 
+
 def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
@@ -45,7 +46,7 @@ def sentence_form(lines_done):
             english_line = english[lines_done]
         else:
             english_line = correction_eng
-        data=pd.DataFrame({'ENG':[english_line],'URDU': [translation],'status':[status],'comment':[comment],'index':[lines_done],'date':[date]})
+        data=pd.DataFrame({'index':[lines_done],'ENG':[english_line],'URDU': [translation],'status':[status],'comment':[comment],'date':[date]})
     return data
     
 def app():
@@ -54,11 +55,20 @@ def app():
     # Assign credentials ann path of style sheet
     creds = ServiceAccountCredentials.from_json_keyfile_name("blank-test-363706-5265bab97753.json", scope)
     client = gspread.authorize(creds)
-
+    file1=open("master_data/MC_ENG_1.txt","r")
+    english=file1.readlines()
     if 'num' not in st.session_state:
         st.session_state.num = 1
     local_css("style.css")
-    st.write("Username: Fakhra Munwar")
+    column1,column2,column3=st.columns(3)
+    with column1:
+        st.metric(label="Team Member (Language)", value="Fakhra Munawer", delta=None, delta_color="normal", help=None)
+    with column2:
+        st.metric(label="Assigned Data Sets", value="1", delta="CORPUS", delta_color="normal", help=None)
+    with column3:
+        st.metric(label="Assigned Lines", value=len(english), delta=None, delta_color="normal", help=None)
+
+    st.write("CORPUS REVIEW")
 
     placeholder = st.empty()
     placeholder2 = st.empty()

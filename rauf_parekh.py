@@ -44,7 +44,7 @@ def sentence_form(lines_done):
             english_line = english[lines_done]
         else:
             english_line = correction_eng
-        data=pd.DataFrame({'ENG':[english_line],'URDU': [translation],'status':[status],'comment':[comment],'index':[lines_done],'date':[date]})
+        data=pd.DataFrame({'index':[lines_done],'ENG':[english_line],'URDU': [translation],'status':[status],'comment':[comment],'date':[date]})
     return data
     
 def app():
@@ -57,7 +57,7 @@ def app():
     if 'num' not in st.session_state:
         st.session_state.num = 1
     local_css("style.css")
-    st.write("Username: Dr. Prof. Rauf Parekh")
+    st.write("CORPUS REVIEW")
     placeholder = st.empty()
     placeholder2 = st.empty()
     while True:    

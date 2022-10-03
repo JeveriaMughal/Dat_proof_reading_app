@@ -1,6 +1,6 @@
 import streamlit as st
-import pandas as pd
 import datetime
+import pandas as pd
 import gspread
 from gspread_dataframe import get_as_dataframe, set_with_dataframe
 from oauth2client.service_account import ServiceAccountCredentials
@@ -10,10 +10,9 @@ def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 def sentence_form(lines_done):
-    local_css("style.css")
-    file1=open("master_data/MC_ENG.txt","r")
+    file1=open("master_data/official-terms-1.en","r")
     english=file1.readlines()
-    file2=open("master_data/MC_URDU.txt","r")
+    file2=open("master_data/official-terms-1.ur","r")
     urdu=file2.readlines()
     st.write("lines reviewed = ",lines_done)
     if lines_done >= len(urdu) or lines_done >= len(english):
@@ -54,20 +53,11 @@ def app():
     # Assign credentials ann path of style sheet
     creds = ServiceAccountCredentials.from_json_keyfile_name("blank-test-363706-5265bab97753.json", scope)
     client = gspread.authorize(creds)
-    file1=open("master_data/MC_ENG.txt","r")
-    english=file1.readlines()
+
     if 'num' not in st.session_state:
         st.session_state.num = 1
     local_css("style.css")
-    column1,column2,column3=st.columns(3)
-    with column1:
-        st.metric(label="Principle Investigator (NLP-LAB)", value="Mehboob Bugti", delta=None, delta_color="normal", help=None)
-    with column2:
-        st.metric(label="Assigned Data Sets", value="1", delta="CORPUS", delta_color="normal", help=None)
-    with column3:
-        st.metric(label="Assigned Lines", value=len(english), delta=None, delta_color="normal", help=None)
-    st.write("CORPUS REVIEW")
-
+    st.write("GLOSSARY REVIEW")
     placeholder = st.empty()
     placeholder2 = st.empty()
     while True:    
@@ -79,16 +69,16 @@ def app():
         else:        
             with placeholder.form(key=str(num)):
                 # df=pd.DataFrame(columns=['index','ENG', 'URDU','status','comment','date'])
-                # data=pd.read_csv("modified_data/dania.csv")
+                # data=pd.read_csv("modified_data/dr_parekh.csv")
                 # df=pd.concat([df,data],ignore_index = True, axis = 0)
-                sheet = client.open("modified_data").get_worksheet(1)
+                sheet = client.open("modified_data").get_worksheet(4)
                 df = pd.DataFrame(sheet.get_all_records(),index=None)
                 lines_done=(len(df.index))
                 data=sentence_form(lines_done)
 
                 if st.form_submit_button('OK'):    
                     df=pd.concat([df,data],ignore_index = True, axis = 0)
-                    # df.to_csv("modified_data/dania.csv",index=False)
+                    # df.to_csv("modified_data/dr.Parekh.csv",index=False)
                     sheet.clear()
                     set_with_dataframe(worksheet=sheet, dataframe=df, include_index=False,include_column_header=True, resize=True)
                     st.session_state.num += 1
