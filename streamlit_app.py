@@ -1,5 +1,5 @@
 import streamlit as st
-import fakhra,bugti,RP,rashid_hameed_homepage,homepage
+import fakhra,bugti,RP,rashid_hameed_homepage,homepage,tanveer_fatima_homepage
 import pandas as pd
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
@@ -19,11 +19,12 @@ PAGES = {"":homepage,
         "پروفیسر ڈاکٹر رؤف پاریکھ":RP,
         "ڈاکٹر راشد حمید":rashid_hameed_homepage,
         "محبوب بگٹی":bugti,
-        "فاخرہ منور": fakhra}
+        "فاخرہ منور": fakhra,
+        "تنویر فاطمہ":tanveer_fatima_homepage}
 st.sidebar.title("NLP-LAB \n Proofreading Application")
 selection = st.sidebar.selectbox("نام",list (PAGES.keys()))
 if selection == "فاخرہ منور":
-    st.sidebar.image("images/fakhra.JPG")
+    st.sidebar.image("images/fakhra_TN.png")
     sheet = client.open("modified_data").get_worksheet(0)
     df = pd.DataFrame(sheet.get_all_records(),index=None)
     csv=df.to_csv(index=False).encode('utf-8')
@@ -40,7 +41,7 @@ if selection == "فاخرہ منور":
         st.sidebar.bar_chart(df1)
 
 if selection == "محبوب بگٹی":
-    st.sidebar.image("images/bugti.jpeg")   
+    st.sidebar.image("images/m_bugti_TN.png")   
     sheet = client.open("modified_data").get_worksheet(1)
     df = pd.DataFrame(sheet.get_all_records(),index=None)
     csv=df.to_csv(index=False).encode('utf-8')
@@ -84,7 +85,7 @@ if selection == "پروفیسر ڈاکٹر رؤف پاریکھ":
         st.sidebar.bar_chart(df1)
 
 if selection == "ڈاکٹر راشد حمید":
-    st.sidebar.image("images/dr_rashid_hameed_1.jpeg")   
+    st.sidebar.image("images/dr_rashid_TN.png")   
     sheet = client.open("modified_data").get_worksheet(4)
     df = pd.DataFrame(sheet.get_all_records(),index=None)
     csv=df.to_csv(index=False).encode('utf-8')
@@ -99,5 +100,22 @@ if selection == "ڈاکٹر راشد حمید":
         chart_data=pd.DataFrame(columns=['index','date'])
         df1 = data['date'].value_counts()
         st.sidebar.bar_chart(df1)
+if selection =="تنویر فاطمہ":
+    st.sidebar.image("images/TF_TN.png")
+    sheet = client.open("modified_data").get_worksheet(5)
+    df = pd.DataFrame(sheet.get_all_records(),index=None)
+    csv=df.to_csv(index=False).encode('utf-8')
+    st.sidebar.download_button(
+            "Download reviewed data",
+            csv,
+            "file.csv",
+            "text/csv",
+            key='download-csv-TF')
+    data=df
+    if len(df.index)>1:
+        chart_data=pd.DataFrame(columns=['index','date'])
+        df1 = data['date'].value_counts()
+        st.sidebar.bar_chart(df1)
+
 page= PAGES[selection]
 page.app()
