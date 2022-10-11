@@ -71,7 +71,7 @@ def app():
                 # df=pd.DataFrame(columns=['index','ENG', 'URDU','status','comment','date'])
                 # data=pd.read_csv("modified_data/dr_parekh.csv")
                 # df=pd.concat([df,data],ignore_index = True, axis = 0)
-                sheet = client.open("modified_data").get_worksheet(2)
+                sheet = client.open("modified_data").get_worksheet(6)
                 df = pd.DataFrame(sheet.get_all_records(),index=None)
                 lines_done=(len(df.index))
                 data=sentence_form(lines_done)
