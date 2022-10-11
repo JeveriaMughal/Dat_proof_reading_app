@@ -59,7 +59,7 @@ if selection == "محبوب بگٹی":
 
 if selection == "پروفیسر ڈاکٹر رؤف پاریکھ":
     st.sidebar.image("images/DG Dr Rauf Parekh.png")
-    sheet = client.open("modified_data").get_worksheet(2)
+    sheet = client.open("modified_data").get_worksheet(6)
     sheet2 = client.open("modified_data").get_worksheet(3)
     df = pd.DataFrame(sheet.get_all_records(),index=None)
     df2 = pd.DataFrame(sheet2.get_all_records(),index=None)
