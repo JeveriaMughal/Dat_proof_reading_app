@@ -3,3 +3,4 @@ datetime
 gspread
 oauth2client 
 gspread-dataframe==3.3.0
+matplotlib
