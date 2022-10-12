@@ -56,7 +56,7 @@ def app():
     if 'num' not in st.session_state:
         st.session_state.num = 1
     local_css("style.css")
-    st.write("welcome Jeveria")
+    st.write("Username: Fakhra Munwar")
 
     placeholder = st.empty()
     placeholder2 = st.empty()

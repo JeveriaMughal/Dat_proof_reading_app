@@ -25,17 +25,22 @@ def sentence_form(lines_done):
             st.write("English")
             st.title(english[lines_done])
             correction_eng=st.text_input("Change sentence",value=default)
+            comment=st.text_input("comment",value=default)
         with col2:
             st.write("اردو")
             # st.title(urdu[lines_done])
             st.markdown('<h1 class="urdu-font-big">'+urdu[lines_done]+'</h1>', unsafe_allow_html=True)
             correction_urdu=st.text_input("جملہ تبدیل کریں",value=default)
-        comment=st.text_input("comment",value=default)
+            st.write("________________________________________")
+            status_other=st.selectbox("Other Options",["NONE","SKIP","PEND","DELETE"])
         date = datetime.date.today()
-        if correction_eng != "" or correction_urdu != "":
-            status="CORRECTED"
+        if status_other == "NONE":
+            if correction_eng != "" or correction_urdu != "":
+                status="CORRECTED"
+            else:
+                status="APPROVED"
         else:
-            status="APPROVED"
+            status=status_other
         if correction_urdu=="":
             translation=urdu[lines_done]
         else:
@@ -71,7 +76,7 @@ def app():
                 # df=pd.DataFrame(columns=['index','ENG', 'URDU','status','comment','date'])
                 # data=pd.read_csv("modified_data/dr_parekh.csv")
                 # df=pd.concat([df,data],ignore_index = True, axis = 0)
-                sheet = client.open("modified_data").get_worksheet(3)
+                sheet = client.open("Data_review_phase2").get_worksheet(3)
                 df = pd.DataFrame(sheet.get_all_records(),index=None)
                 lines_done=(len(df.index))
                 data=sentence_form(lines_done)

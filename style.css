@@ -13,6 +13,9 @@ body {
     float: right;
 }
 
+.st-cj {
+    background-color: #c6edd2a3;
+}
 .stTextInput>div>div>input {
     color: #000000;
     font-size: 30px;

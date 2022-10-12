@@ -1,5 +1,5 @@
 import streamlit as st
-import fakhra,bugti,RP,rashid_hameed_homepage,homepage,tanveer_fatima_homepage
+import fakhra,bugti,RP,rashid_hameed_homepage,homepage,tanveer_fatima_homepage,nisar_MK_homepage
 import pandas as pd
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
@@ -20,7 +20,8 @@ PAGES = {"":homepage,
         "ڈاکٹر راشد حمید":rashid_hameed_homepage,
         "محبوب بگٹی":bugti,
         "فاخرہ منور": fakhra,
-        "تنویر فاطمہ":tanveer_fatima_homepage}
+        "تنویر فاطمہ":tanveer_fatima_homepage,
+        "نثار ماماخیل":nisar_MK_homepage}
 st.sidebar.title("NLP-LAB \n Proofreading Application")
 selection = st.sidebar.selectbox("نام",list (PAGES.keys()))
 if selection == "فاخرہ منور":
@@ -59,30 +60,50 @@ if selection == "محبوب بگٹی":
 
 if selection == "پروفیسر ڈاکٹر رؤف پاریکھ":
     st.sidebar.image("images/DG Dr Rauf Parekh.png")
-    sheet = client.open("modified_data").get_worksheet(6)
-    sheet2 = client.open("modified_data").get_worksheet(3)
+    sheet = client.open("Data_review_phase2").get_worksheet(0)
+    sheet2 = client.open("Data_review_phase2").get_worksheet(1)
+    sheet3 = client.open("Data_review_phase2").get_worksheet(3)
+    sheet4 = client.open("Data_review_phase2").get_worksheet(6)
+
     df = pd.DataFrame(sheet.get_all_records(),index=None)
     df2 = pd.DataFrame(sheet2.get_all_records(),index=None)
-    df_all=pd.concat([df,df2],ignore_index = True, axis = 0)
-    csv=df.to_csv(index=False).encode('utf-8')
-    st.sidebar.download_button(
-            "Download Reviewed Corpus",
-            csv,
-            "reviwed_corpus.csv",
-            "text/csv",
-            key='download-csv-parekh')
-    csv2=df2.to_csv(index=False).encode('utf-8')
-    st.sidebar.download_button(
-            "Download Reviewed Glossary",
-            csv2,
-            "reviwed_glossary.csv",
-            "text/csv",
-            key='download-csv2-parekh')
+    df3 = pd.DataFrame(sheet3.get_all_records(),index=None)
+    df4 = pd.DataFrame(sheet4.get_all_records(),index=None)
+    df_all=pd.concat([df,df2,df3,df4],ignore_index = True, axis = 0)
     data=df_all
     if len(df_all.index)>1:
         chart_data=pd.DataFrame(columns=['index','date'])
         df1 = data['date'].value_counts()
         st.sidebar.bar_chart(df1)
+    csv=df.to_csv(index=False).encode('utf-8')
+    st.sidebar.download_button(
+            "Download Reviewed Corpus_BUGTI",
+            csv,
+            "reviwed_corpus.csv",
+            "text/csv",
+            key='download-csv-parekh0')
+    csv2=df2.to_csv(index=False).encode('utf-8')
+    st.sidebar.download_button(
+            "Download Reviewed Corpus_MUNAWAR",
+            csv2,
+            "reviwed_corpus.csv",
+            "text/csv",
+            key='download-csv-parekh1')
+    csv4=df4.to_csv(index=False).encode('utf-8')
+    st.sidebar.download_button(
+            "Download Reviewed Corpus_Parekh",
+            csv4,
+            "reviwed_glossary.csv",
+            "text/csv",
+            key='download-csv2-parekh2')
+    csv3=df3.to_csv(index=False).encode('utf-8')
+    st.sidebar.download_button(
+            "Download Reviewed Glossary",
+            csv3,
+            "reviwed_glossary.csv",
+            "text/csv",
+            key='download-csv2-parekh3')
+
 
 if selection == "ڈاکٹر راشد حمید":
     st.sidebar.image("images/dr_rashid_TN.png")   
@@ -111,6 +132,23 @@ if selection =="تنویر فاطمہ":
             "file.csv",
             "text/csv",
             key='download-csv-TF')
+    data=df
+    if len(df.index)>1:
+        chart_data=pd.DataFrame(columns=['index','date'])
+        df1 = data['date'].value_counts()
+        st.sidebar.bar_chart(df1)
+
+if selection == "نثار ماماخیل":
+    st.sidebar.image("images/NMK.png")
+    sheet = client.open("modified_data").get_worksheet(2)
+    df = pd.DataFrame(sheet.get_all_records(),index=None)
+    csv=df.to_csv(index=False).encode('utf-8')
+    st.sidebar.download_button(
+            "Download reviewed data",
+            csv,
+            "file.csv",
+            "text/csv",
+            key='download-csv-NMK')
     data=df
     if len(df.index)>1:
         chart_data=pd.DataFrame(columns=['index','date'])

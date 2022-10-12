@@ -1,13 +1,13 @@
 import streamlit as st
-import tanveer_fatima_page1
+import nisar_MK
 def app():
-    file1=open("master_data/MC_ENG_TF.txt","r")
+    file1=open("master_data/MC_ENG_NMK.txt","r")
     corpus=file1.readlines()
     # file2=open("master_data/official-terms.ur","r")
     # glossary=file2.readlines()
     column1,column2,column3=st.columns(3)
     with column1:
-        st.metric(label="Assistant informatics Officer, NLPD", value="Tanveer Fatima", delta="Phase I Reviwer", delta_color="normal", help=None)
+        st.metric(label="Programmer, NLPD", value="Nisar Mamakhel", delta="Phase I Reviewer", delta_color="normal", help=None)
     with column2:
         st.metric(label="Assigned Data Sets", value="1", delta="CORPUS", delta_color="normal", help=None)
     with column3:
@@ -23,4 +23,4 @@ def app():
     #     rauf_parekh_glossary.app()
 
 
-    tanveer_fatima_page1.app()
+    nisar_MK.app()

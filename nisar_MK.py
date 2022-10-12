@@ -10,9 +10,9 @@ def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 def sentence_form(lines_done):
-    file1=open("master_data/official-terms-1.en","r")
+    file1=open("master_data/MC_ENG_NMK.txt","r")
     english=file1.readlines()
-    file2=open("master_data/official-terms-1.ur","r")
+    file2=open("master_data/MC_URDU_NMK.txt","r")
     urdu=file2.readlines()
     st.write("lines reviewed = ",lines_done)
     if lines_done >= len(urdu) or lines_done >= len(english):
@@ -25,22 +25,17 @@ def sentence_form(lines_done):
             st.write("English")
             st.title(english[lines_done])
             correction_eng=st.text_input("Change sentence",value=default)
-            comment=st.text_input("comment",value=default)
         with col2:
             st.write("اردو")
             # st.title(urdu[lines_done])
             st.markdown('<h1 class="urdu-font-big">'+urdu[lines_done]+'</h1>', unsafe_allow_html=True)
             correction_urdu=st.text_input("جملہ تبدیل کریں",value=default)
-            st.write("________________________________________")
-            status_other=st.selectbox("Other Options",["NONE","SKIP","PEND","DELETE"])
+        comment=st.text_input("comment",value=default)
         date = datetime.date.today()
-        if status_other == "NONE":
-            if correction_eng != "" or correction_urdu != "":
-                status="CORRECTED"
-            else:
-                status="APPROVED"
+        if correction_eng != "" or correction_urdu != "":
+            status="CORRECTED"
         else:
-            status=status_other
+            status="APPROVED"
         if correction_urdu=="":
             translation=urdu[lines_done]
         else:
@@ -62,7 +57,7 @@ def app():
     if 'num' not in st.session_state:
         st.session_state.num = 1
     local_css("style.css")
-    st.write("GLOSSARY REVIEW")
+    st.write("CORPUS REVIEW")
     placeholder = st.empty()
     placeholder2 = st.empty()
     while True:    
@@ -76,7 +71,7 @@ def app():
                 # df=pd.DataFrame(columns=['index','ENG', 'URDU','status','comment','date'])
                 # data=pd.read_csv("modified_data/dr_parekh.csv")
                 # df=pd.concat([df,data],ignore_index = True, axis = 0)
-                sheet = client.open("Data_review_phase2").get_worksheet(4)
+                sheet = client.open("modified_data").get_worksheet(2)
                 df = pd.DataFrame(sheet.get_all_records(),index=None)
                 lines_done=(len(df.index))
                 data=sentence_form(lines_done)

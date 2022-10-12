@@ -26,13 +26,13 @@ def sentence_form(lines_done):
         with col1:
             st.write("English")
             st.title(english[lines_done])
-            correction_eng=st.text_input("Change sentence",value=default)
+            correction_eng=st.text_area("Change sentence",value=default)
         with col2:
             st.write("اردو")
             # st.title(urdu[lines_done])
             st.markdown('<h1 class="urdu-font-big">'+urdu[lines_done]+'</h1>', unsafe_allow_html=True)
-            correction_urdu=st.text_input("جملہ تبدیل کریں",value=default)
-        comment=st.text_input("comment",value=default)
+            correction_urdu=st.text_area("جملہ تبدیل کریں",value=default)
+        comment=st.text_area("comment",value=default)
         date = datetime.date.today()
         if correction_eng != "" or correction_urdu != "":
             status="CORRECTED"
@@ -62,7 +62,7 @@ def app():
     local_css("style.css")
     column1,column2,column3=st.columns(3)
     with column1:
-        st.metric(label="Team Member (Language)", value="Fakhra Munawer", delta=None, delta_color="normal", help=None)
+        st.metric(label="Team Member (Language)", value="Fakhra Munawar", delta="Phase I Reviwer", delta_color="normal", help=None)
     with column2:
         st.metric(label="Assigned Data Sets", value="1", delta="CORPUS", delta_color="normal", help=None)
     with column3:
