@@ -32,7 +32,7 @@ def sentence_form(lines_done):
             st.markdown('<h1 class="urdu-font-big">'+urdu[lines_done]+'</h1>', unsafe_allow_html=True)
             correction_urdu=st.text_area("جملہ تبدیل کریں",value=default)
         comment=st.text_area("comment",value=default)
-        date = datetime.date.today()
+        date = str(datetime.date.today())
         if correction_eng != "" or correction_urdu != "":
             status="CORRECTED"
         else:
@@ -45,19 +45,19 @@ def sentence_form(lines_done):
             english_line = english[lines_done]
         else:
             english_line = correction_eng
-        data=pd.DataFrame({'index':[lines_done],'ENG':[english_line],'URDU': [translation],'status':[status],'comment':[comment],'date':[date]})
+        data=(lines_done,english_line,translation,status,comment,date)
     return data
+def next_available_row(worksheet):
+    str_list = list(filter(None, worksheet.col_values(1)))
+    return (len(str_list)+1)
     
 def app():
-    if 'num' not in st.session_state:
-        st.session_state.num = 1
     scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
 		"https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
     # Assign credentials ann path of style sheet
     creds = ServiceAccountCredentials.from_json_keyfile_name("blank-test-363706-5265bab97753.json", scope)
     client = gspread.authorize(creds)
-    file1=open("master_data/MC_ENG.txt","r")
-    english=file1.readlines()
+
     if 'num' not in st.session_state:
         st.session_state.num = 1
     local_css("style.css")
@@ -74,14 +74,17 @@ def app():
         else:        
             with placeholder.form(key=str(num)):
                 sheet = client.open("modified_data").get_worksheet(5)
-                df = pd.DataFrame(sheet.get_all_records(),index=None)
-                lines_done=(len(df.index))
+                next_row=next_available_row(sheet)
+                lines_done=next_row-2 # 1 header row and one for accounting zero-th value
                 data=sentence_form(lines_done)
 
                 if st.form_submit_button('OK'):    
-                    df=pd.concat([df,data],ignore_index = True, axis = 0)
-                    sheet.clear()
-                    set_with_dataframe(worksheet=sheet, dataframe=df, include_index=False,include_column_header=True, resize=True)
+                    sheet.update_acell("A{}".format(next_row), data[0])
+                    sheet.update_acell("B{}".format(next_row), data[1])
+                    sheet.update_acell("C{}".format(next_row), data[2])
+                    sheet.update_acell("D{}".format(next_row), data[3])
+                    sheet.update_acell("E{}".format(next_row), data[4])
+                    sheet.update_acell("F{}".format(next_row), data[5])
                     st.session_state.num += 1
                     placeholder.empty()
                     placeholder2.empty()

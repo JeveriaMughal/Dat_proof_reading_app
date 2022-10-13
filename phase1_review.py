@@ -12,7 +12,7 @@ def local_css(file_name):
 def sentence_form(english,urdu,comment_in,max_len,lines_done):
     if lines_done >= max_len:
         st.success("you have reviewed all the data prepared by this member")
-        data=pd.DataFrame()
+        data=()
     else:
         default=""
         col1,col2=st.columns(2)
@@ -28,7 +28,7 @@ def sentence_form(english,urdu,comment_in,max_len,lines_done):
             st.write("________________________________________")
             status_other=st.selectbox("Other Options",["NONE","SKIP","PEND","DELETE"])
        
-        date = datetime.date.today()
+        date = str(datetime.date.today())
         if status_other == "NONE":
             if correction_eng != "" or correction_urdu != "":
                 status="CORRECTED"
@@ -44,8 +44,12 @@ def sentence_form(english,urdu,comment_in,max_len,lines_done):
             english_line = english
         else:
             english_line = correction_eng
-        data=pd.DataFrame({'index':[lines_done],'ENG':[english_line],'URDU': [translation],'status':[status],'comment':[comment],'date':[date]})
+        data=(lines_done,english_line,translation,status,comment,date)
     return data
+
+def next_available_row(worksheet):
+    str_list = list(filter(None, worksheet.col_values(1)))
+    return (len(str_list)+1)
     
 def fakhra():
     scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
@@ -79,19 +83,23 @@ def fakhra():
             else:        
                 with placeholder.form(key=str(num)):
                     sheet = client.open("Data_review_phase2").get_worksheet(sheet_no)
-                    df = pd.DataFrame(sheet.get_all_records(),index=None)
-                    lines_done=(len(df.index))
+                    next_row=next_available_row(sheet)
+                    lines_done=next_row-2 # 1 header row and one for accounting zero-th value
+                
                     st.write("lines reviewed = ",lines_done) 
                     if lines_done >= len(df_in):
                         st.success("End of Phase I Data prepared by Ms. Munawer")
-                        data=pd.DataFrame()
+                        data=()
                     else:
                         data=sentence_form(english[lines_done],urdu[lines_done],comment_all[lines_done],len(df_in),lines_done)
 
-                    if st.form_submit_button('OK'):    
-                        df=pd.concat([df,data],ignore_index = True, axis = 0)
-                        sheet.clear()
-                        set_with_dataframe(worksheet=sheet, dataframe=df, include_index=False,include_column_header=True, resize=True)
+                    if st.form_submit_button('OK'):     
+                        sheet.update_acell("A{}".format(next_row), data[0])
+                        sheet.update_acell("B{}".format(next_row), data[1])
+                        sheet.update_acell("C{}".format(next_row), data[2])
+                        sheet.update_acell("D{}".format(next_row), data[3])
+                        sheet.update_acell("E{}".format(next_row), data[4])
+                        sheet.update_acell("F{}".format(next_row), data[5])
                         st.session_state.num += 1
                         placeholder.empty()
                         placeholder2.empty()
@@ -129,19 +137,23 @@ def m_bugti():
             else:        
                 with placeholder.form(key=str(num)):
                     sheet = client.open("Data_review_phase2").get_worksheet(sheet_no)
-                    df = pd.DataFrame(sheet.get_all_records(),index=None)
-                    lines_done=(len(df.index))
+                    next_row=next_available_row(sheet)
+                    lines_done=next_row-2 # 1 header row and one for accounting zero-th value
+                
                     st.write("lines reviewed = ",lines_done) 
                     if lines_done >= len(df_in):
-                        st.success("End of Phase I Data prepared by Mr. Bugti")
-                        data=pd.DataFrame()
+                        st.success("End of Phase I Data prepared by Ms. Munawer")
+                        data=()
                     else:
                         data=sentence_form(english[lines_done],urdu[lines_done],comment_all[lines_done],len(df_in),lines_done)
 
-                    if st.form_submit_button('OK'):    
-                        df=pd.concat([df,data],ignore_index = True, axis = 0)
-                        sheet.clear()
-                        set_with_dataframe(worksheet=sheet, dataframe=df, include_index=False,include_column_header=True, resize=True)
+                    if st.form_submit_button('OK'):     
+                        sheet.update_acell("A{}".format(next_row), data[0])
+                        sheet.update_acell("B{}".format(next_row), data[1])
+                        sheet.update_acell("C{}".format(next_row), data[2])
+                        sheet.update_acell("D{}".format(next_row), data[3])
+                        sheet.update_acell("E{}".format(next_row), data[4])
+                        sheet.update_acell("F{}".format(next_row), data[5])
                         st.session_state.num += 1
                         placeholder.empty()
                         placeholder2.empty()
@@ -180,24 +192,29 @@ def t_fatima():
             else:        
                 with placeholder.form(key=str(num)):
                     sheet = client.open("Data_review_phase2").get_worksheet(sheet_no)
-                    df = pd.DataFrame(sheet.get_all_records(),index=None)
-                    lines_done=(len(df.index))
+                    next_row=next_available_row(sheet)
+                    lines_done=next_row-2 # 1 header row and one for accounting zero-th value
+                
                     st.write("lines reviewed = ",lines_done) 
                     if lines_done >= len(df_in):
-                        st.success("End of Phase I Data prepared by Ms. Fatima")
-                        data=pd.DataFrame()
+                        st.success("End of Phase I Data prepared by Ms. Munawer")
+                        data=()
                     else:
                         data=sentence_form(english[lines_done],urdu[lines_done],comment_all[lines_done],len(df_in),lines_done)
 
-                    if st.form_submit_button('OK'):    
-                        df=pd.concat([df,data],ignore_index = True, axis = 0)
-                        sheet.clear()
-                        set_with_dataframe(worksheet=sheet, dataframe=df, include_index=False,include_column_header=True, resize=True)
+                    if st.form_submit_button('OK'):     
+                        sheet.update_acell("A{}".format(next_row), data[0])
+                        sheet.update_acell("B{}".format(next_row), data[1])
+                        sheet.update_acell("C{}".format(next_row), data[2])
+                        sheet.update_acell("D{}".format(next_row), data[3])
+                        sheet.update_acell("E{}".format(next_row), data[4])
+                        sheet.update_acell("F{}".format(next_row), data[5])
                         st.session_state.num += 1
                         placeholder.empty()
                         placeholder2.empty()
                     else:
                         st.stop()
+
 def nisar_MK():
     scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
 		"https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
@@ -230,19 +247,23 @@ def nisar_MK():
             else:        
                 with placeholder.form(key=str(num)):
                     sheet = client.open("Data_review_phase2").get_worksheet(sheet_no)
-                    df = pd.DataFrame(sheet.get_all_records(),index=None)
-                    lines_done=(len(df.index))
+                    next_row=next_available_row(sheet)
+                    lines_done=next_row-2 # 1 header row and one for accounting zero-th value
+                
                     st.write("lines reviewed = ",lines_done) 
                     if lines_done >= len(df_in):
-                        st.success("End of Phase I Data prepared by Mr. Mamakhel")
-                        data=pd.DataFrame()
+                        st.success("End of Phase I Data prepared by Ms. Munawer")
+                        data=()
                     else:
                         data=sentence_form(english[lines_done],urdu[lines_done],comment_all[lines_done],len(df_in),lines_done)
 
-                    if st.form_submit_button('OK'):    
-                        df=pd.concat([df,data],ignore_index = True, axis = 0)
-                        sheet.clear()
-                        set_with_dataframe(worksheet=sheet, dataframe=df, include_index=False,include_column_header=True, resize=True)
+                    if st.form_submit_button('OK'):     
+                        sheet.update_acell("A{}".format(next_row), data[0])
+                        sheet.update_acell("B{}".format(next_row), data[1])
+                        sheet.update_acell("C{}".format(next_row), data[2])
+                        sheet.update_acell("D{}".format(next_row), data[3])
+                        sheet.update_acell("E{}".format(next_row), data[4])
+                        sheet.update_acell("F{}".format(next_row), data[5])
                         st.session_state.num += 1
                         placeholder.empty()
                         placeholder2.empty()
