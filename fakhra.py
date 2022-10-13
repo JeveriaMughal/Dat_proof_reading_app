@@ -86,7 +86,6 @@ def app():
                 sheet = client.open("modified_data").get_worksheet(0)
                 next_row=next_available_row(sheet)
                 lines_done=next_row-2 # 1 header row and one for accounting zero-th value
-                st.write(lines_done)
                 data=sentence_form(lines_done)
 
                 if st.form_submit_button('OK'):    
