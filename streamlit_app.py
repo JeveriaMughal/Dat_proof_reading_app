@@ -107,7 +107,7 @@ if selection == "پروفیسر ڈاکٹر رؤف پاریکھ":
 
 if selection == "ڈاکٹر راشد حمید":
     st.sidebar.image("images/dr_rashid_TN.png")   
-    sheet = client.open("modified_data").get_worksheet(4)
+    sheet = client.open("Data_review_phase2").get_worksheet(4)
     df = pd.DataFrame(sheet.get_all_records(),index=None)
     csv=df.to_csv(index=False).encode('utf-8')
     st.sidebar.download_button(
