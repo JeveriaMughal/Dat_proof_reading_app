@@ -8,13 +8,14 @@ from oauth2client.service_account import ServiceAccountCredentials
 def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
 def sentence_form(line_number,row):
     local_css("style.css")
-    english=row[1]
-    urdu=row[2]
-    status_prev=row[3]
-    comment_prev=row[4]
-    date_prev=row[5]
+    english=        row[1]
+    urdu=           row[2]
+    status_prev=    row[3]
+    comment_prev=   row[4]
+    date_prev=      row[5]
 
     st.write("index number = ",line_number-2)
     if line_number < 0 :
@@ -59,7 +60,7 @@ def last_available_row(worksheet):
     str_list = list(filter(None, worksheet.col_values(1)))
     return (len(str_list))
 
-def app_glossary():
+def app_fakhra():
     if 'num' not in st.session_state:
         st.session_state.num = 1
     scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
@@ -70,7 +71,7 @@ def app_glossary():
 
     local_css("style.css")
 
-    sheet = client.open("Data_review_phase2").get_worksheet(3)
+    sheet = client.open("modified_data").get_worksheet(0)
     lines_done=last_available_row(sheet)
     if lines_done<=1:
         st.error("Please review some data first, then come back to the revision page")
@@ -108,7 +109,7 @@ def app_glossary():
                     else:
                         st.stop()
 
-def app_corpus_F():
+def app_bugti():
     if 'num' not in st.session_state:
         st.session_state.num = 1
     scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
@@ -119,7 +120,7 @@ def app_corpus_F():
 
     local_css("style.css")
 
-    sheet = client.open("Data_review_phase2").get_worksheet(0)
+    sheet = client.open("modified_data").get_worksheet(1)
     lines_done=last_available_row(sheet)
     if lines_done<=1:
         st.error("Please review some data first, then come back to the revision page")
@@ -156,7 +157,7 @@ def app_corpus_F():
                     else:
                         st.stop()
 
-def app_corpus_B():
+def app_nisar():
     if 'num' not in st.session_state:
         st.session_state.num = 1
     scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
@@ -167,7 +168,56 @@ def app_corpus_B():
 
     local_css("style.css")
 
-    sheet = client.open("Data_review_phase2").get_worksheet(1)
+    sheet = client.open("modified_data").get_worksheet(2)
+    lines_done=last_available_row(sheet)
+    if lines_done<=1:
+        st.error("Please review some data first, then come back to the revision page")
+    else:
+        col_left,col_right=st.columns([5,1])
+        with col_right:
+            line_number=(st.number_input("choose index number",min_value=0,max_value=lines_done-2,format="%i",value=lines_done-2)+2)
+   
+        placeholder = st.empty()
+        placeholder2 = st.empty()
+        while True:    
+            num = st.session_state.num
+
+            if placeholder2.button('end', key=num):
+                placeholder2.empty()
+                break
+            else:        
+                with placeholder.form(key=str(num)):
+                    row=sheet.row_values(line_number)
+                    data=sentence_form(line_number,row)
+                    
+
+                    if st.form_submit_button('ok'):  
+                        sheet.update_acell("A{}".format(line_number), data[0])
+                        sheet.update_acell("B{}".format(line_number), data[1])
+                        sheet.update_acell("C{}".format(line_number), data[2])
+                        sheet.update_acell("D{}".format(line_number), data[3])
+                        sheet.update_acell("E{}".format(line_number), data[4])
+                        sheet.update_acell("F{}".format(line_number), data[5])
+                        st.session_state.num += 1
+                        placeholder.empty()
+                        placeholder2.empty()
+
+                    
+                    else:
+                        st.stop()
+
+def app_tf():
+    if 'num' not in st.session_state:
+        st.session_state.num = 1
+    scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
+		"https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
+    # Assign credentials ann path of style sheet
+    creds = ServiceAccountCredentials.from_json_keyfile_name("blank-test-363706-5265bab97753.json", scope)
+    client = gspread.authorize(creds)
+
+    local_css("style.css")
+
+    sheet = client.open("modified_data").get_worksheet(5)
     lines_done=last_available_row(sheet)
     if lines_done<=1:
         st.error("Please review some data first, then come back to the revision page")

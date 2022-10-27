@@ -1,5 +1,5 @@
 import streamlit as st
-import rashid_hameed_page1,phase1_review
+import rashid_hameed_page1,phase1_review,revision_RH
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import pandas as pd
@@ -26,13 +26,19 @@ def app():
     col1,col2,col3=st.columns([2,2,1])
     with col3:
         selection=st.radio("DATA SET",["GLOSSARY","TANVEER FATIMA","NISAR MAMAKHEL"])
-    
-    if selection == "CORPUS":
-        rauf_parekh.app()
-    if selection == "GLOSSARY":
-        rashid_hameed_page1.app()
-    if selection =="TANVEER FATIMA":
-        phase1_review.t_fatima()
-    if selection =="NISAR MAMAKHEL":
-        phase1_review.nisar_MK()
-    
+        revise=st.checkbox("Revise your work")
+    if revise:
+        if selection == "GLOSSARY":
+            revision_RH.app_glossary()
+        if selection == "TANVEER FATIMA":
+            revision_RH.app_corpus_T()
+        if selection =="NISAR MAMAKHEL":
+            revision_RH.app_corpus_N()
+    else:
+        if selection == "GLOSSARY":
+            rashid_hameed_page1.app()
+        if selection =="TANVEER FATIMA":
+            phase1_review.t_fatima()
+        if selection =="NISAR MAMAKHEL":
+            phase1_review.nisar_MK()
+        

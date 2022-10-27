@@ -1,5 +1,5 @@
 import streamlit as st
-import fakhra,bugti,RP,rashid_hameed_homepage,homepage,tanveer_fatima_homepage,nisar_MK_homepage
+import fakhra_homepage,m_bugti_homepage,RP,rashid_hameed_homepage,homepage,tanveer_fatima_homepage,nisar_MK_homepage
 import pandas as pd
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
@@ -18,8 +18,8 @@ client = gspread.authorize(creds)
 PAGES = {"":homepage,
         "پروفیسر ڈاکٹر رؤف پاریکھ":RP,
         "ڈاکٹر راشد حمید":rashid_hameed_homepage,
-        "محبوب بگٹی":bugti,
-        "فاخرہ منور": fakhra,
+        "محبوب بگٹی":m_bugti_homepage,
+        "فاخرہ منور": fakhra_homepage,
         "تنویر فاطمہ":tanveer_fatima_homepage,
         "نثار ماماخیل":nisar_MK_homepage}
 st.sidebar.title("NLP-LAB \n Proofreading Application")
@@ -108,19 +108,39 @@ if selection == "پروفیسر ڈاکٹر رؤف پاریکھ":
 if selection == "ڈاکٹر راشد حمید":
     st.sidebar.image("images/dr_rashid_TN.png")   
     sheet = client.open("Data_review_phase2").get_worksheet(4)
+    sheet2 = client.open("Data_review_phase2").get_worksheet(5)
+    sheet3 = client.open("Data_review_phase2").get_worksheet(2)
+
     df = pd.DataFrame(sheet.get_all_records(),index=None)
-    csv=df.to_csv(index=False).encode('utf-8')
-    st.sidebar.download_button(
-            "Download reviewed data",
-            csv,
-            "file.csv",
-            "text/csv",
-            key='download-csv-bugti')
-    data=df
-    if len(df.index)>1:
+    df2 = pd.DataFrame(sheet2.get_all_records(),index=None)
+    df3 = pd.DataFrame(sheet3.get_all_records(),index=None)
+    df_all=pd.concat([df,df2,df3],ignore_index = True, axis = 0)
+    data=df_all
+    if len(df_all.index)>1:
         chart_data=pd.DataFrame(columns=['index','date'])
         df1 = data['date'].value_counts()
         st.sidebar.bar_chart(df1)
+    csv=df.to_csv(index=False).encode('utf-8')
+    st.sidebar.download_button(
+            "Download Reviewed GLOSSARY",
+            csv,
+            "reviwed_GLOSSARY.csv",
+            "text/csv",
+            key='download-csv-hameed0')
+    csv2=df2.to_csv(index=False).encode('utf-8')
+    st.sidebar.download_button(
+            "Download Reviewed Corpus_FATIMA",
+            csv2,
+            "reviwed_corpus_FATIMA.csv",
+            "text/csv",
+            key='download-csv-hameed1')
+    csv3=df3.to_csv(index=False).encode('utf-8')
+    st.sidebar.download_button(
+            "Download Reviewed corpus_NISAR",
+            csv3,
+            "reviwed_corpus_NISAR.csv",
+            "text/csv",
+            key='download-csv2-hameed3')
 if selection =="تنویر فاطمہ":
     st.sidebar.image("images/TF_TN.png")
     sheet = client.open("modified_data").get_worksheet(5)

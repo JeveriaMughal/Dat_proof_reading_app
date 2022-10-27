@@ -1,5 +1,5 @@
 import streamlit as st
-import rauf_parekh,rauf_parekh_glossary,phase1_review #,revision_RP,revision_RP_2
+import rauf_parekh,rauf_parekh_glossary,phase1_review ,revision_RP
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import pandas as pd
@@ -26,20 +26,18 @@ def app():
     col1,col2,col3=st.columns([2,2,1])
     with col3:
         selection=st.radio("DATA SET",["GLOSSARY","FAKHRA","MEHBOOB BUGTI"])
-    # revise=st.sidebar.checkbox("Revise your work")
-    # if selection == "CORPUS":
-    #     rauf_parekh.app()
-    if selection == "GLOSSARY":
-        rauf_parekh_glossary.app()
-    if selection == "FAKHRA":
-        phase1_review.fakhra()
-    if selection =="MEHBOOB BUGTI":
-        phase1_review.m_bugti()
-    # if revise and selection=="CORPUS":
-    #     revision_RP.app()
-    # if selection == "CORPUS" and ~revise:
-    #     rauf_parekh.app()
-    # if selection == "GLOSSARY" and ~revise:
-    #     rauf_parekh_glossary.app()
-    # if selection == "GLOSSARY" and revise:
-    #     revision_RP_2.app()
+        revise=st.checkbox("Revise your work")
+    if revise:
+        if selection == "GLOSSARY":
+            revision_RP.app_glossary()
+        if selection == "FAKHRA":
+            revision_RP.app_corpus_F()
+        if selection =="MEHBOOB BUGTI":
+            revision_RP.app_corpus_B()
+    else:
+        if selection == "GLOSSARY":
+            rauf_parekh_glossary.app()
+        if selection == "FAKHRA":
+            phase1_review.fakhra()
+        if selection =="MEHBOOB BUGTI":
+            phase1_review.m_bugti()

@@ -54,11 +54,10 @@ def sentence_form(line_number,row):
             english_line = correction_eng
         data=(line_number-2,english_line,translation,status,comment,date)
     return data
-
 def last_available_row(worksheet):
     str_list = list(filter(None, worksheet.col_values(1)))
     return (len(str_list))
-
+    
 def app_glossary():
     if 'num' not in st.session_state:
         st.session_state.num = 1
@@ -70,7 +69,7 @@ def app_glossary():
 
     local_css("style.css")
 
-    sheet = client.open("Data_review_phase2").get_worksheet(3)
+    sheet = client.open("Data_review_phase2").get_worksheet(4)
     lines_done=last_available_row(sheet)
     if lines_done<=1:
         st.error("Please review some data first, then come back to the revision page")
@@ -78,7 +77,6 @@ def app_glossary():
         col_left,col_right=st.columns([5,1])
         with col_right:
             line_number=(st.number_input("choose index number",min_value=0,max_value=lines_done-2,format="%i",value=lines_done-2)+2)  
-
         placeholder = st.empty()
         placeholder2 = st.empty()
         while True:    
@@ -89,6 +87,7 @@ def app_glossary():
                 break
             else:        
                 with placeholder.form(key=str(num)):
+
                     row=sheet.row_values(line_number)
                     data=sentence_form(line_number,row)
                     
@@ -100,6 +99,7 @@ def app_glossary():
                         sheet.update_acell("D{}".format(line_number), data[3])
                         sheet.update_acell("E{}".format(line_number), data[4])
                         sheet.update_acell("F{}".format(line_number), data[5])
+
                         st.session_state.num += 1
                         placeholder.empty()
                         placeholder2.empty()
@@ -108,7 +108,7 @@ def app_glossary():
                     else:
                         st.stop()
 
-def app_corpus_F():
+def app_corpus_T():
     if 'num' not in st.session_state:
         st.session_state.num = 1
     scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
@@ -119,7 +119,7 @@ def app_corpus_F():
 
     local_css("style.css")
 
-    sheet = client.open("Data_review_phase2").get_worksheet(0)
+    sheet = client.open("Data_review_phase2").get_worksheet(5)
     lines_done=last_available_row(sheet)
     if lines_done<=1:
         st.error("Please review some data first, then come back to the revision page")
@@ -156,7 +156,7 @@ def app_corpus_F():
                     else:
                         st.stop()
 
-def app_corpus_B():
+def app_corpus_N():
     if 'num' not in st.session_state:
         st.session_state.num = 1
     scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
@@ -167,7 +167,7 @@ def app_corpus_B():
 
     local_css("style.css")
 
-    sheet = client.open("Data_review_phase2").get_worksheet(1)
+    sheet = client.open("Data_review_phase2").get_worksheet(2)
     lines_done=last_available_row(sheet)
     if lines_done<=1:
         st.error("Please review some data first, then come back to the revision page")
