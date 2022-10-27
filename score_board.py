@@ -222,7 +222,7 @@ def app():
     Total_lines8=len(df8)
     Total_lines9=len(df9)
     Total_lines10=len(df10)
-    sum_RH=Total_lines8+Total_lines8+Total_lines10
+    sum_RH=Total_lines8+Total_lines9+Total_lines10
     
     if df8.empty:
       RH_G_A=0
