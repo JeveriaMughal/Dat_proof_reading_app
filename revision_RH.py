@@ -71,6 +71,17 @@ def app_glossary():
 
     sheet = client.open("Data_review_phase2").get_worksheet(4)
     lines_done=last_available_row(sheet)
+    col1,col2,col3=st.columns([0.25,3,1])
+    with col3:
+            show_data=st.checkbox("Show Data")
+    with col2:
+        if show_data:
+            if lines_done>1:
+                df=pd.DataFrame(sheet.get_all_records())
+                df.set_index('index', inplace=True)
+                st.dataframe(df)
+            else:
+                st.error("NO DATA TO SHOW")
     if lines_done<=1:
         st.error("Please review some data first, then come back to the revision page")
     else:
@@ -121,6 +132,17 @@ def app_corpus_T():
 
     sheet = client.open("Data_review_phase2").get_worksheet(5)
     lines_done=last_available_row(sheet)
+    col1,col2,col3=st.columns([0.25,3,1])
+    with col3:
+            show_data=st.checkbox("Show Data")
+    with col2:
+        if show_data:
+            if lines_done>1:
+                df=pd.DataFrame(sheet.get_all_records())
+                df.set_index('index', inplace=True)
+                st.dataframe(df)
+            else:
+                st.error("NO DATA TO SHOW")
     if lines_done<=1:
         st.error("Please review some data first, then come back to the revision page")
     else:
@@ -169,6 +191,17 @@ def app_corpus_N():
 
     sheet = client.open("Data_review_phase2").get_worksheet(2)
     lines_done=last_available_row(sheet)
+    col1,col2,col3=st.columns([0.25,3,1])
+    with col3:
+            show_data=st.checkbox("Show Data")
+    with col2:
+        if show_data:
+            if lines_done>1:
+                df=pd.DataFrame(sheet.get_all_records())
+                df.set_index('index', inplace=True)
+                st.dataframe(df)
+            else:
+                st.error("NO DATA TO SHOW")
     if lines_done<=1:
         st.error("Please review some data first, then come back to the revision page")
     else:
