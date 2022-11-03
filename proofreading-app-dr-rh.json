@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "proofreading-app-367504",
+  "private_key_id": "1e96c6d8ce9b825e2d49251d24f7de40911cd4c8",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDh5ArCohV30SbG\npLThPvTn8kyD+YXj8c0z4JiCmr+8ZSxA9CnuyS9s68uuZR7ryUpc3fr+yjT/75VC\nFqH5PwwgST+5Ppv1JpkLRLuNexgrc8j15FHWZ+JCTPxAMR6lU0HqifN3IKQObb46\nHXMWygDPxkbUY8CwXLl76amoSU+rrXwFv8jDgoU2h3kyD+D9N0jQfjvG9mz4KT0B\nVhwSHZh/36T4sX9LXtyMrpIoKOEtgfSQevrhb81Cl/B8CpNupr1dzlamC54Kum01\nxYtlSNzEZrCqnxGvKdlub+X57/7sZ0CKcc0s6fEwkD0lNU/fLyd1/gLi6H2H5pej\n42Ji2t9PAgMBAAECggEABn0Q7A9Q04y/8uPHSFMRINp+ZSoVNPt8m/lfGB1O1aAI\nWeNJkxDXWmcZhixka3xwNOOxcoEnbZSZsnjI9Upg1EqWWIFaZHvT2JWEV6eKBbGB\nO8LvsNtyDdp9QnDGwxP1qEGHK0xWOg3f8XZoGGb8B/vXjAFDhy1arJsFIw7cCX/X\n5Jdf6JVr/htEgZzgAa0ijFmfHBrtwNcSssG5rxhhEgxZnWz4ECL6Wg/uIg6Ngfcx\n83rZQxocfOFQzVJ/raNUpIiNqCEk2fk53AUnJ6QdXDPFr0gSHphKw25C5EePLKlo\nvNSEtbeMVnNc5eXTz0DUiJPbHSRAMPpnZbZt088UwQKBgQD7QDJJzxcizXXil0ES\nm0ItbXTmyKXE4lvxiSrow2aariGN784fhLbQv++Yh2Vb+G0EiUfGaJ7gbxtw0fll\nFViJSzeyZQGJGxyu63XxEpqczAJv9WvwmAHpcl7TeqFOHpe3oadQwTtHgVLauvZA\np9bcQ0JqAL+n/8zESVnWcW44QQKBgQDmKSDojmHsO1dEe8AaZMtCfGAZQ2R2WDA4\ny0TGRLYEW059DqgELDwj3UxgpEYyhffHesAOmwjfXUUxuUHME/MezwsFzTQa509v\np6p86Ma6UU+HnnRq6P/oaCzFLolO7fX3KgfyoaKNZh5DcSawa66KPeYixul8XAcC\nDNfNl/SzjwKBgCzOAunEo2SSbS5OOM1/oGqHdWxeZalZkHnfMya1CcwVt2gfVouq\nWAub3rc9leazw4UmkgUgzQxK5ALXfvj2uIYrQrBucLqpehD7blniLm49t0WN54TN\nJrIhsiVWXgOXUwjtK/ArtU2IE2VsJ9PZ2mgHGoXawlLMPBDY38ttCPHBAoGBAN5f\nCFuIDVYnMzaIdd9KWRPghRyDf1HT/KsywTzqcA2fhiLPgUee0XA5RKzuqp/vzaje\nkSbLZXQhclQLUGXzNGck1NqDG3+O0rHnBZJveGnVW4iFcKdGfNG3rOHKB4HJ6WYn\nJsymnB4PdtfkP+Qd9eG80lfxZO7xHxg8/le2JAdDAoGBAOjwnsPB9EFvtl/U7/rZ\nlJ3sHsmRDw2IfflKaRzZUdPRsMmsldfG2HWSSQmR4m8IF35a7dTPDG1I/QrTuXvt\nA+FD16CEPDyRNObs1wqEp41N/Be0NbxVLwZlxU2UMPKKxXHDqqp9501SGz0Fi4I/\noDrwrhU7lJe9j/GCgBa6MQwb\n-----END PRIVATE KEY-----\n",
+  "client_email": "dr-rashid-hameed@proofreading-app-367504.iam.gserviceaccount.com",
+  "client_id": "103504292430991976134",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dr-rashid-hameed%40proofreading-app-367504.iam.gserviceaccount.com"
+}

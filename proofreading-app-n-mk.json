@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "proofreading-app-367504",
+  "private_key_id": "45e47e7ad3ffb3a387b775aece387876b16d78fd",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCL4CzDyZlf9M1H\nimGafi1cSnJJYqHAjUasHaqGlzb9MgskLhL/CF9IGliN1dnojsFYiTK2s4ewitRp\n77EqWLuKECZRSFz/HbzxkUv7aGooPg4a5T6vZBgB+MTVZM/HVprU3iiJqKB9aOfZ\ne0NpTPjKVzTKArSH57nmxOMdyV1y9Yjssevsu26UTdBI7zfcX9cAEIqtXjSXFD8t\nf3fAr4SqURefqQJwQyocmbAvwcFwKN4RzGjRKKPZPl7dBse61f88sW8vzQ9G+VdD\nzLc1BW6wTnEQdCr1bSMwWrye9oH3ObbM3CEgOA4mKJxxGzQ6DDI/CG7OykuMcKc9\nIow6gEfnAgMBAAECggEALPyeqSGvuJLtavLwzVWDlUlEVKHqUBmf/z9TVxJPV0O/\nHZXL+kZhDrmafZOoEAnJ2YXWz7gSDg+4nZG/s1TyjEcBa+cQMeUIndETVPqSGftL\nYg8VCCfzKL8v30obIYuTJJ+G/i9D3tHcr6/bUIS3B6zgh5AzK/q1aaktOqlG6u/f\nk0qmWAXjRkdtJNxxr4dnPvP+wYJJxXofoMG3MaYjOm10GC8MKR2bQTY2nRs9/UvE\noNZOa82EZ1wTNzX04++82wLgJ9alMnWEd6d7qyjddq2OFygUYt26SxckARJfFJZS\nHTTcWqolSG0GN7KqoUvcCiwNTNxFFwldYqfIsb360QKBgQDFYYwg0HAhoBvACNt1\ndxFBCYeCzORbkObWYHom7zZ9aOsUuwj51O69nAXdviTKrCYen5e51dS8yN6mC5U2\nTcT6+4HHRjzvy5bJlsw2VQy7M0igAR5LKY52Bf964/Wq1wjDb+FN2nI00t9EWgVR\nQgBcc4r9M48fJgXkLD9WlgL8fQKBgQC1ap6esusLgzwzINgkrSVOcmDuKLQz7EKs\ntQFVJlQSTQaEol7VR0lkL1TWmxRERVZn8Yz9RPpdTPL9WdibrZM0j07z1iUcF5cI\n0Mhmahs8J1AKLtzdBAdTNPp4HWaE/LWw4p2UGR7TlfX4cuTKgjS5eLTCmtkD5DzM\nfZMIozfXMwKBgHS5Lwjouqbn7AEwO7fHZei0HfL3/8M2eYwlGZeUtwCK3xovUSuN\nBHIUplNvcop4K0LI1g0LqvbJQwGmr+KhMu/JdAHIQ5j7KHymNLWcrh62QSh+ANAq\nDxk0itS9ojYZXBFXREGqAQfD/EyLf8GB6nzBx1vc9bJR5gH9OKeXpsRxAoGATXM+\nUsxZsmmNqtpLzKSq96m3HhX8kOo9sNP5xKt/WuzNapSTXgR4HbBjTNeaOGdNs0SZ\nh4sKRAjU+DqCUjwxS1AfSdRTtYGQtm/EDo0gIXc7IY3ONwFAS1Kj1+HdYcstml21\nHoP2+CfegfozGQ2rir8wlKBdI98t4bN+sUJVVacCgYBwFRaEOasPFMG2qLEOxI8b\n1asr1OsEzLa4aZp5Dar9PjYXeYVdrLzWbt+CkncYa1BKUzVlTNPFsbTqlpGY+u0N\ndnbfob2kdaj+XL1sQ6+9nZlT1x/FGeXiSaFxmitrltgkLSCUc1A6h9AjVLQcoVcb\n95ieVQbyweiOgW6T+2nSeQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "n-mamakhel@proofreading-app-367504.iam.gserviceaccount.com",
+  "client_id": "115601819488161794725",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/n-mamakhel%40proofreading-app-367504.iam.gserviceaccount.com"
+}

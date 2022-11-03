@@ -22,7 +22,7 @@ def app():
     with col1:
    	 st.header('Phase I Stats')	 
     col3,col4=st.columns([2,2])
-    creds = ServiceAccountCredentials.from_json_keyfile_name("blank-test-363706-5265bab97753.json", scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name("proofreading-app-stats.json", scope)
     client = gspread.authorize(creds)
     # uploaded_file = st.file_uploader("Choose a file")
     colors=['aliceblue','purple','aliceblue','aqua','aquamarine','darkturquoise','purple']

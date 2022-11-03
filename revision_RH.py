@@ -64,7 +64,7 @@ def app_glossary():
     scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
 		"https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
     # Assign credentials ann path of style sheet
-    creds = ServiceAccountCredentials.from_json_keyfile_name("blank-test-363706-5265bab97753.json", scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name("proofreading-app-dr-rh.json", scope)
     client = gspread.authorize(creds)
 
     local_css("style.css")
@@ -125,7 +125,7 @@ def app_corpus_T():
     scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
 		"https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
     # Assign credentials ann path of style sheet
-    creds = ServiceAccountCredentials.from_json_keyfile_name("blank-test-363706-5265bab97753.json", scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name("proofreading-app-dr-rh.json", scope)
     client = gspread.authorize(creds)
 
     local_css("style.css")
@@ -184,7 +184,7 @@ def app_corpus_N():
     scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
 		"https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
     # Assign credentials ann path of style sheet
-    creds = ServiceAccountCredentials.from_json_keyfile_name("blank-test-363706-5265bab97753.json", scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name("proofreading-app-dr-rh.json", scope)
     client = gspread.authorize(creds)
 
     local_css("style.css")

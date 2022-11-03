@@ -1,12 +1,12 @@
 import streamlit as st
-import rauf_parekh,rauf_parekh_glossary,phase1_review ,revision_RP
+import rauf_parekh_glossary,phase1_review ,revision_RP
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import pandas as pd
 def app():
     scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
     "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
-# Assign credentials ann path of style sheet
+    # Assign credentials ann path of style sheet
     creds = ServiceAccountCredentials.from_json_keyfile_name("blank-test-363706-5265bab97753.json", scope)
     client = gspread.authorize(creds)
     sheet1 = client.open("modified_data").get_worksheet(0)

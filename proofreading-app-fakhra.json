@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "proofreading-app-367504",
+  "private_key_id": "2cf6717eed276106041c757829909038a528aaed",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC6MclWXZWIVaPo\nEmUHrdblJNY1nb8iM7glmQ+RQygX3GHMbhRvcYWhomLGvIftsIs9M/CL9vxWzchI\nLD0V3WpGdRSJwpL3udSWGT+KiBdg/E/AwNzmvXj2laA9bafuvyeQNgjeTntq8Mf6\nIm8Skm/Npaqvav9ekZ70qYKR+BOp7Zl02+BSHEKJ883humObsr1RK3BboBD8TKSk\nRwoKywxgte5gN/T+ubZ2uuLOsTZgWwM8GLO/9hclxogYgy3Lok+1axoXxTyzS+mi\nLd4DDLyvR0IhEnLmhVxQUbHAUOvpxqWVom18Rt24MYNzu4b9PX/K6vLv8th3QCK0\nLrl0ihmfAgMBAAECggEAFkXBV07vhbT029xjcHU3iQaMhzJc/DriksDJ727wm1YV\n7s3WLPSP7yNNHIfN3L1rEoGliyCa08le5V9BWV24ikAUGlyHlxGIIAJaKviXj1bv\nNVf8tK9CioCgf+ifl3wPP/1utyT9N3AhA8ddsQOKUze3gK9UZ9wUfyDNySc7Nu7L\nydwvtUvYivjbRFuxoTnvQvipV7tVmdKBNzkTuZj9uTJ6L7VsaxIdj83ahJRUm1Te\nfNEzl5Bpc51C1GsgMzU006oQMCnjRt8UBV714Zn9/H6W++xxDxusxtJ9/rYQ46Yv\nrwDnlTx3K9px32X7Zo41bBG1cY8cfbvBhlNMjYKklQKBgQD84VfRrfAyjeBgUE2m\nMp9eQh1WqzbrpCba977XpRqRUrf/igcHfTqSlh5Ryc1YiEyF7O1pWK6MHfzAuTwt\nWCknKKLujOHkj5HuHfUL3KF2Lf6NJrTYJxU+YyycibBS42ikFDjlYEOzN3kuI3o8\ntpbbXHcOvGf5bRiL5qh4CNUwywKBgQC8fdVqTgrbf1pUsbSlm4JqYHuydA7oqnvu\nSg0F+wOov9dz4k121lVnDTilxgzb6XqZqgafMz5NGV21W2SRLyENvokeKbADKZOV\nY6H6goK8OizJmWo57HY1+hmkqSnLiQz2FhrDv9uj1sM3Y+Kx21vhC/G2FWI2xdT+\n680vvoOD/QKBgQDmoq9xsW4s7XEC5rqrJehsE2imryk76U72zpXkH9UHTaY7Diwz\nDGfrYbbtaVw7rrP8QYaWWid367GmJEtaH9oIuOtBHoS37KlvvyrLUsKAAprzKaYu\nrhaV++WoL3v9XSMG4tqxeQbF4YZIKltGHFGiZ8a+Td+WgYWtswVb1NJ72QKBgQCI\nuLmBp2QmvKSYBGJlMXySjrOKyLY7u9WzDZGOwflwgN7V1tObnHJMEoIBdLvFFADy\nzyqIdZH+OKUJNGapDMdsAcXR1Ckw0gqT9LX8UIhl4ci03ov3wfYoxuWs02tWkG2P\nXo9BZ7v4hoIJfnFj0xo9Df3gtngMBMmvsvidZhJdPQKBgGlRhr2ejwMEnjf9VqDJ\nyFHGqkthzyeGaDwR9L3fVzRC2zh6qsHQ9/UZrYwd1gKnvduMXPHvmVBxFtCYPP3F\nx/ERd3/El9v/to2e0QZUbZNxN4C6pH4zCspZ9TceeP4TQtSx+AdARGd9RpCJLSYv\njcdB5sK2TU6WcQKPG4MS7YmU\n-----END PRIVATE KEY-----\n",
+  "client_email": "fakhra@proofreading-app-367504.iam.gserviceaccount.com",
+  "client_id": "117713179379403011559",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/fakhra%40proofreading-app-367504.iam.gserviceaccount.com"
+}

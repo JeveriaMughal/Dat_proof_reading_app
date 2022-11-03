@@ -66,7 +66,7 @@ def app_fakhra():
     scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
 		"https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
     # Assign credentials ann path of style sheet
-    creds = ServiceAccountCredentials.from_json_keyfile_name("blank-test-363706-5265bab97753.json", scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name("proofreading-app-fakhra.json", scope)
     client = gspread.authorize(creds)
 
     local_css("style.css")
@@ -126,7 +126,7 @@ def app_bugti():
     scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
 		"https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
     # Assign credentials ann path of style sheet
-    creds = ServiceAccountCredentials.from_json_keyfile_name("blank-test-363706-5265bab97753.json", scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name("proofreading-app-m-bugti.json", scope)
     client = gspread.authorize(creds)
 
     local_css("style.css")
@@ -185,7 +185,7 @@ def app_nisar():
     scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
 		"https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
     # Assign credentials ann path of style sheet
-    creds = ServiceAccountCredentials.from_json_keyfile_name("blank-test-363706-5265bab97753.json", scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name("proofreading-app-n-mk.json", scope)
     client = gspread.authorize(creds)
 
     local_css("style.css")
@@ -245,7 +245,7 @@ def app_tf():
     scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
 		"https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
     # Assign credentials ann path of style sheet
-    creds = ServiceAccountCredentials.from_json_keyfile_name("blank-test-363706-5265bab97753.json", scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name("proofreading-app-tf.json", scope)
     client = gspread.authorize(creds)
 
     local_css("style.css")

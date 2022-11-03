@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "proofreading-app-367504",
+  "private_key_id": "1bd312fa90e0b0e66ae800d333c13bac8d622507",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCb8pCH7EVyrr9/\nR0JVrXXTyZ3MifqY1tWISGUoMzAWlq4JjegnsZpHZNqtv1IOr6RpqB+Lbd5iDrAx\n9xYzDlUTqDBJ90HSzxVa1FXlbEux78mbQGvaUA2200jJeePMwlTmKFsuugSv51cM\nrllL4NJUTVOZ4zhUiEosP0HLMZjzIqDD293TLs1ue1wiEmdscqk8ekRxJPqtDc/E\nrhhR6dZx2gBeU9Kdg40H8VWIi/hECNb7nnqovZ6sVmFf1ScFSnZIldMdznxbVSN0\nadyklmCLHLx7wAFLTGCSkEIa9Ukz+0moGX+m+pZB8VGpUYy7Cv71Yv+Q6z5FDzFD\nEfEgqb/fAgMBAAECggEACrCNiwj9bbIK0GJbFV0RjECav3rfIaZATC+M4jzirqRf\ng6olisBYL01Q1sNxkC4mr/4P7ifMLEk4zK6qPTpd8eiqfrd4h0cd/fQ7exbO+Csp\nVP9iepGC5HsGgeuysMYgDwgfJUx8+8MjgBayFPXGlR7D0fL1rohfxTlaJ4qGeHar\nZLe+lRVIVh/SKVnIx/GdlwIELNwgxaCJt0thW06m80qMjpUhGXJGR5RZD4h3plbS\n/PmLSsDLfuXMc2elX9y0JYGtDZTslOTc2QFpCsiDL53rZXYYomZv3jiuPueMoyoW\nQPY2ZYHUy3RneJfeSKGgpj/HFQe8dw9t+KQ5yvkhaQKBgQDXLfQ/YO1Uf01/QcnF\nYEi99GjP7wElwrtpNcD1q+GwsA+f5lAryvTOpqITZ0kxURgpuw9vvwtZToEHeRex\neecAxT5WccRgvjPJBCZynt3GaZ7NhqyP7tTFReIbAlu/IGeW3Tan8Ye79+JCAHb8\nAAvzY40MELMkBumw7NMCHBHJCwKBgQC5iAyfq/2AkPQQDwjIPl1ijj2IZ00hKFLu\nkwr1efstkTqg/QmTy1smJBIm4N/lY/krAz/fuDVmh+kHi4TdnCNPs0vKv0OY77JX\nHzIRlow/7wPs+qbIuvvf8vjajLEeot/YiJDbfF+rUQmrtNILIHlvYM2wNhwYG552\nNVWvLqww/QKBgDC2InjGhHOAbhbE2dxos47s6V1JCcV2k955YLk8s9a/xIm6JaQE\nSe8OIdqqoxMa/JFV22S8puEMuIDslMSEiBrQjBAdqQsNg8OZwOpptGLaPizgs+fR\ndTFDZLAglIxr1Yd9hIX4U3Xl4751RHo/uHTcsG1uyl75gaWftxTfLdeJAoGAW89u\nZ8lljiytChFWiDkMX0wCOTDdYy4gM/1B7A3r9TWr7KSrC58TQQGSlfir80kQsW9P\nOXdfvZg+AcTSABRXCQax1+fkHJdpCmHelgOI7c5qg+fZhvW41K7Y5NXAhGeXHAEg\npeybLxzQC09UrbrpPOuLfcqZBnkMZnSoLSOMhEUCgYBUII1x/5d5vzIozqezP0vd\nbYoyHYXK8e0DPYdjUiu3AopXQ+juSCGdfLLgLjzWynxGljN9SKUfvj0Zk+/mVh5b\nrM+vQxOx/oH48e71OltGKdW8pbLFFd7fM/lkbc3bdCpPRDZQ/A3NZmBaqh3yqkZ5\nYxJusIIQ8+R/3NAA1tladQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "t-fatima@proofreading-app-367504.iam.gserviceaccount.com",
+  "client_id": "105044954344440672751",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/t-fatima%40proofreading-app-367504.iam.gserviceaccount.com"
+}

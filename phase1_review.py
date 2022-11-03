@@ -55,7 +55,7 @@ def fakhra():
     scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
 		"https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
     # Assign credentials ann path of style sheet
-    creds = ServiceAccountCredentials.from_json_keyfile_name("blank-test-363706-5265bab97753.json", scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name("proofreading-app-dr-rp.json", scope)
     client = gspread.authorize(creds)
     sheet_no=0
     sheet_in = client.open("modified_data").get_worksheet(sheet_no)
@@ -109,7 +109,7 @@ def m_bugti():
     scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
 		"https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
     # Assign credentials ann path of style sheet
-    creds = ServiceAccountCredentials.from_json_keyfile_name("blank-test-363706-5265bab97753.json", scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name("proofreading-app-dr-rp.json", scope)
     client = gspread.authorize(creds)
     sheet_no=1
     sheet_in = client.open("modified_data").get_worksheet(sheet_no)
@@ -164,7 +164,7 @@ def t_fatima():
     scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
 		"https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
     # Assign credentials ann path of style sheet
-    creds = ServiceAccountCredentials.from_json_keyfile_name("blank-test-363706-5265bab97753.json", scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name("proofreading-app-dr-rh.json", scope)
     client = gspread.authorize(creds)
     sheet_no=5
     sheet_in = client.open("modified_data").get_worksheet(sheet_no)
@@ -219,7 +219,7 @@ def nisar_MK():
     scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
 		"https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
     # Assign credentials ann path of style sheet
-    creds = ServiceAccountCredentials.from_json_keyfile_name("blank-test-363706-5265bab97753.json", scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name("proofreading-app-dr-rh.json", scope)
     client = gspread.authorize(creds)
     sheet_no=2
     sheet_in = client.open("modified_data").get_worksheet(sheet_no)

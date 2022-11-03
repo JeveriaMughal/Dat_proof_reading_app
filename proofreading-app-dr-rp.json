@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "proofreading-app-367504",
+  "private_key_id": "54f451b1db37fd87886f8c542d988fdcefb5854e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCuXIwMQl3yB9qp\njP3Tp+II/dpzfsTTUrR1Unw4tN1SD+CeTTnjEqLVb94ziZWaM6uuFU91dlyIyjzh\nqBPiH9Yli1NggJ4X4xS4dWXTbsOSumffZRN5IWFbZFKWEWWqhqULxD7+/bywIE4g\nkQ1AvzoPOasTLUcL+AD8yNQx3EOIPBH2o0P1Yd74j7ziPZi8p3syJBYV76A6ucOI\n3w831Tidq/rIk2zpavyktt57qMHnl9uasmT/lRA1tIHTXXCtlspmNDRDBAVYYTyM\nIHdfUgBYGAGSx3dUzQ4fYddl5mXWZqNkCICS3Y+yrmgvrvil6YHIGlOgwZoIRqEm\nZnZmS4DpAgMBAAECggEAGakbH07BHraTMrLCRF0HwgUCGk9Ezkj0r/OEvp+3lrUp\nfIKnC0kZ18mP7QvJjZkfIg6W1BWoRqVk0lz3GCdRT9MyYRhsq91Kll8IrlY1yClQ\n0irA8+m6t0WLdfR3fuIz9ghasRJMq6sFdHuEdMvv0n/NMpROSW+lTY6M1A2zjp/x\nty52MmoYYlv8JwAb7+n1XYk/TyvW6G47mfsHfOUWQM9Y0Kyc83rmhE7hvzUawZf6\nhqm1Cojfr7iQsF1t0dZA26EFEhBQpJpbxFdvomgmVn4IA9O/7HMzvit6T9AYW8jm\nJVpBza4KtxsIFd3soHDufMp3oDEJFfVscBuGiATLRQKBgQD0eSa+xb+ChQOQFgTs\nDYAOB7rr3hrJdZa7QyZZPlBkInBvKeiFpUFaT5P7mnAG3ttGyUIc6kMdV8w04zFU\n72ih99mz0UpJYczg+XYMlxd7NadKu/zcx/8iKmIhsexTOcKY1y1z29DryoqzIH3t\nTw3ct6X+r0/NNR6OMhP2NoDF3wKBgQC2lSF/MNjv9gvGy9fFPDPJpvveN23n74wx\nHX5HZtTFdhFGBoQbynhpXgs8UyUXHgEH1c/XbnpQR55Xy7oGXovwltw4wFwnb1jC\nspBoBqKZV7oyPNpFL1G5s+KG7YlDeraENpUo55Kdc/9QEZtObatkku/0XW1py7zb\n/3HG7xLCNwKBgH6XfYirvU9IsV+bB1F0bCrXteMNT7GiQjsVunXb3qT7cF0fxlfu\nCrlJG8fdYMUuAT3WWXW/mKFJJWT9gD4K+pNkVEbYyS7WhdC5XHeIhZA3aDk6vuVU\nari2Wbo497bg4fNi+RZVbQmsB8ZZvNt1ZCg2sK4A+cG5D+lx5QRJlMThAoGAfwq7\neQXjHOzl+thhdZLTMg/nlxKYfdb3hEFSWZpamF7z2/ayu6ehKyfNx5bO6wvsiagj\na3Iq12tN6ScPdFkbJDfEWhS2ypW2fBrFUiyzvOEG5OfktFkdk4pwJ5RmezaKgup7\n1S90m+xXjT4DA4pZxKxdHHpZpFCoQ6e1Ykd9lPcCgYB/8vdbJwEyml0T+qS+vAqk\nsznszI6Z7QecCejTkkc1cfsAWt0BL4tY+cfA8/DdUYXy1qILU5F74tbjN+ynnrUp\nQ1xUKxBgsm8k2iM4ly8Mkn0njVcj27SqO1rk44pjKa4ilFShucn2QFst14iBdgEI\npM2LBE+aazj2n5oPQW+BtA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "dr-rauf-parekh@proofreading-app-367504.iam.gserviceaccount.com",
+  "client_id": "112766404178830565896",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dr-rauf-parekh%40proofreading-app-367504.iam.gserviceaccount.com"
+}

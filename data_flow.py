@@ -31,7 +31,7 @@ def app():
     #Google sheet credentials
     scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
         "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
-    creds = ServiceAccountCredentials.from_json_keyfile_name("blank-test-363706-5265bab97753.json", scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name("proofreading-app-stats.json", scope)
     client = gspread.authorize(creds)
     #phase1 sheets 
     sheet=client.open("modified_data").get_worksheet(0)
