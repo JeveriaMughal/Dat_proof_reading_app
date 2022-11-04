@@ -37,6 +37,8 @@ def app():
     df5=pd.DataFrame(sheet5.get_all_records(),index=None)
     sheet6=client.open("modified_data").get_worksheet(2)
     df6=pd.DataFrame(sheet6.get_all_records(),index=None)
+    sheet11=client.open("modified_data").get_worksheet(7)
+    df11=pd.DataFrame(sheet11.get_all_records(),index=None)
     r= random.randint(0,255)
     g= random.randint(0,255)
     b= random.randint(0,255)
@@ -49,15 +51,16 @@ def app():
     Total_lines1=len(df1)
     Total_lines5=len(df5)
     Total_lines6=len(df6)
+    Total_lines11=len(df11)
     fig = go.Figure(go.Bar(x=["Fakhra","Mehboob Bughti",
                               # "Dr Rauf Parekh","Dr Rashid",
-                              "Tanveer Fatima","Nisar Mamakhel"],
+                              "Tanveer Fatima","Nisar Mamakhel","Jawad"],
                             y=[Total_lines,Total_lines1,
                               # sum,Total_lines4,
-                              Total_lines5,Total_lines6],
+                              Total_lines5,Total_lines6,Total_lines11],
                             text=[Total_lines,Total_lines1,
                               # sum,Total_lines4,
-                              Total_lines5,Total_lines6],
+                              Total_lines5,Total_lines6,Total_lines11],
                               marker_color=colour))
     fig.update_xaxes(title='Members',title_font_size=18, rangeselector_font_family="Times New Roman",
                                                 rangeselector_font_size=10)
@@ -90,12 +93,18 @@ def app():
     else:
       MEM_15=len(df6.loc[df6['status']=="APPROVED"])
       MEM_16=len(df6.loc[df6['status']=="CORRECTED"])
+    if df11.empty:
+      MEM_17=0
+      MEM_18=0
+    else:
+      MEM_17=len(df11.loc[df11['status']=="APPROVED"])
+      MEM_18=len(df11.loc[df11['status']=="CORRECTED"])
 
 
 
-    APPROVED=[MEM_1,MEM_2,MEM_6,MEM_15]
-    CORRECTED=[MEM_7,MEM_8,MEM_14,MEM_16]
-    team=['Fakhra', 'Mehboob Bughti','Tanveer Fatima','Nisar Mamakhel']
+    APPROVED=[MEM_1,MEM_2,MEM_6,MEM_15,MEM_17]
+    CORRECTED=[MEM_7,MEM_8,MEM_14,MEM_16,MEM_18]
+    team=['Fakhra', 'Mehboob Bughti','Tanveer Fatima','Nisar Mamakhel','Jawad']
     fig1 = go.Figure(data=[go.Bar(name='Corrected', x=team, y=CORRECTED,text=CORRECTED,marker_color=colour1),go.Bar(name='Approved', x=team, y=APPROVED,text=APPROVED,marker_color=colour2)])
     fig1.update_xaxes(title='Members',title_font_size=18, rangeselector_font_family="Times New Roman",
                                                 rangeselector_font_size=10)

@@ -298,3 +298,63 @@ def app_tf():
                     
                     else:
                         st.stop()
+
+def app_j():
+    if 'num' not in st.session_state:
+        st.session_state.num = 1
+    scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
+		"https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
+    # Assign credentials ann path of style sheet
+    creds = ServiceAccountCredentials.from_json_keyfile_name("proofreading-app-tf.json", scope)
+    client = gspread.authorize(creds)
+
+    local_css("style.css")
+
+    sheet = client.open("modified_data").get_worksheet(7)
+    lines_done=last_available_row(sheet)
+    col1,col2,col3=st.columns([0.25,3,1])
+    with col3:
+            show_data=st.checkbox("Show Data")
+    with col2:
+        if show_data:
+            if lines_done>1:
+                df=pd.DataFrame(sheet.get_all_records())
+                df.set_index('index', inplace=True)
+                st.dataframe(df)
+            else:
+                st.error("NO DATA TO SHOW")
+    if lines_done<=1:
+        st.error("Please review some data first, then come back to the revision page")
+    else:
+        col_left,col_right=st.columns([5,1])
+        with col_right:
+            line_number=(st.number_input("choose index number",min_value=0,max_value=lines_done-2,format="%i",value=lines_done-2)+2)
+   
+        placeholder = st.empty()
+        placeholder2 = st.empty()
+        while True:    
+            num = st.session_state.num
+
+            if placeholder2.button('end', key=num):
+                placeholder2.empty()
+                break
+            else:        
+                with placeholder.form(key=str(num)):
+                    row=sheet.row_values(line_number)
+                    data=sentence_form(line_number,row)
+                    
+
+                    if st.form_submit_button('ok'):  
+                        sheet.update_acell("A{}".format(line_number), data[0])
+                        sheet.update_acell("B{}".format(line_number), data[1])
+                        sheet.update_acell("C{}".format(line_number), data[2])
+                        sheet.update_acell("D{}".format(line_number), data[3])
+                        sheet.update_acell("E{}".format(line_number), data[4])
+                        sheet.update_acell("F{}".format(line_number), data[5])
+                        st.session_state.num += 1
+                        placeholder.empty()
+                        placeholder2.empty()
+
+                    
+                    else:
+                        st.stop()
