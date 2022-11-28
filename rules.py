@@ -40,7 +40,7 @@ def app():
     st.title("ڈائریکٹر (انتظامیہ)/ چیئرمین")
     st.title("یوانِ اُردو، پطرس بخاری روڈ، ایچ ۔۴/۸")
     st.success("This is correct :white_check_mark:")
-    st.warning("If information on any side of text (English/Urdu) is missing indicated with "....." then please add the missing information and remove "....."")
+    st.warning("If information on any side of text (English/Urdu) is missing indicated with ..... then please add the missing information and remove .....")
     st.info("Please make sure that the information added is unique and completes the sense of a sentence e.g.")
     col7,col8=st.columns(2) 
     with col7:
@@ -51,4 +51,4 @@ def app():
         st.write("اردو")
         st.title("نمبر--------------------- اسلام آباد، (تاریخ)-------------")
         st.error("نمبر ۹-۲۳/۴۲/ار اسلام آباد، (تاریخ) ۲۰​/۱۰/۲۰۲۲")
-    st.succes("Note: In case of any ambiguity regarding instructions or data, kindly contact MT team for further assistance.")
+    st.success("Note: In case of any ambiguity regarding instructions or data, kindly contact MT team for further assistance.")
