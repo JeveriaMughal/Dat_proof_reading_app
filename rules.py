@@ -40,24 +40,15 @@ def app():
     st.title("ڈائریکٹر (انتظامیہ)/ چیئرمین")
     st.title("یوانِ اُردو، پطرس بخاری روڈ، ایچ ۔۴/۸")
     st.success("This is correct :white_check_mark:")
-
-
-# If Urdu language text is available and English text is missing, Translate Urdu text to English text
-# 
-# 
-# 
-# Remove Urdu text from English side and remove any English text from Urdu side (Translate English Terms into Urdu Terms)
-# 
-# Ministries/ Divisions
-# وزارتوں/ ڈویژنوں
-# When words are separated by "/" in one side of text and missing in other, keep only one word that best fits the sentence or is context dependent. e.g.
-# He will be on probation for a period of one year.
-# وہ ایک سال کی مدت کے لیے آزمائش/پروبیشن پر ہوں گے۔
-# 
-# 
-#
-# 
-# 
-# ا
-
-#     """)
+    st.warning("If information on any side of text (English/Urdu) is missing indicated with "....." then please add the missing information and remove "....."")
+    st.info("Please make sure that the information added is unique and completes the sense of a sentence e.g.")
+    col7,col8=st.columns(2) 
+    with col7:
+        st.write("English")
+        st.title("No. ------------------- Islamabad, Date: ---------")
+        st.error("No. R/23/42-9 Islamabad, (Date) 20/10/2022")
+    with col8:
+        st.write("اردو")
+        st.title("نمبر--------------------- اسلام آباد، (تاریخ)-------------")
+        st.error("نمبر ۹-۲۳/۴۲/ار اسلام آباد، (تاریخ) ۲۰​/۱۰/۲۰۲۲")
+    st.succes("Note: In case of any ambiguity regarding instructions or data, kindly contact MT team for further assistance.")
