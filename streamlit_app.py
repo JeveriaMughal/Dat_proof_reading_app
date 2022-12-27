@@ -23,7 +23,7 @@ PAGES = {"":homepage,
         "تنویر فاطمہ":tanveer_fatima_homepage,
         "نثار ماماخیل":nisar_MK_homepage,
         "جواد الحق":jawad_homepage}
-st.sidebar.title("NLP-LAB \n Proofreading Application")
+st.sidebar.title("NLP-LAB \n Data Development Application")
 selection = st.sidebar.selectbox("نام",list (PAGES.keys()))
 if selection == "فاخرہ منور":
     st.sidebar.image("images/fakhra_TN.png")
