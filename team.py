@@ -19,7 +19,7 @@ def app():
     glossary=file2.readlines()
     column1,column2,column3,column4,cloumn5=st.columns([.5,2,1,2,1])
     with column2:
-        st.metric(label="Director General NLPD / Project Director NLP-LAB", value="Prof. Dr. Rauf Parekh", delta="Phase II Reviewer", delta_color="inverse", help=None)
+        st.metric(label="Former Director General NLPD", value="Prof. Dr. Rauf Parekh", delta="Phase II Reviewer", delta_color="inverse", help=None)
     with column3:
         st.metric(label="Assigned Data Sets", value="2", delta="GLOSSARY & CORPUS", delta_color="normal", help=None)
     with column4:
@@ -37,7 +37,7 @@ def app():
     with column1:
         st.image("images/dr_rashid_TN.png")
     with column2:
-        st.metric(label="Executive Director, NLPD", value="Dr. Rashid Hameed", delta="Phase II Reviewer", delta_color="inverse", help=None)
+        st.metric(label="Director General, NLPD", value="Dr. Rashid Hameed", delta="Phase II Reviewer", delta_color="inverse", help=None)
     with column3:
         st.metric(label="Assigned Data Sets", value="1", delta="GLOSSARY & CORPUS", delta_color="normal", help=None)
     with column4:
