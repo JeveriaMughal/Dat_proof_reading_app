@@ -7,7 +7,7 @@ def app():
     # glossary=file2.readlines()
     column1,column2,column3=st.columns(3)
     with column1:
-        st.metric(label="Team Member (Programming), NLP-Lab", value="Jawad-ul-Haq", delta="Phase I Reviwer", delta_color="normal", help=None)
+        st.metric(label="DEO, NLPD", value="Umer Farooq", delta="Phase I Reviwer", delta_color="normal", help=None)
     with column2:
         st.metric(label="Assigned Data Sets", value="1", delta="CORPUS", delta_color="normal", help=None)
     with column3:
