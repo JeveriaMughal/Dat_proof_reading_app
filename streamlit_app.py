@@ -22,7 +22,7 @@ PAGES = {"":homepage,
         "فاخرہ منور": fakhra_homepage,
         "تنویر فاطمہ":tanveer_fatima_homepage,
         "نثار ماماخیل":nisar_MK_homepage,
-        "جواد الحق":jawad_homepage}
+        "عمر فاروق":jawad_homepage}
 st.sidebar.title("NLP-LAB \n Data Development Application")
 selection = st.sidebar.selectbox("نام",list (PAGES.keys()))
 if selection == "فاخرہ منور":
@@ -176,7 +176,7 @@ if selection == "نثار ماماخیل":
         df1 = data['date'].value_counts()
         st.sidebar.bar_chart(df1)
 
-if selection == "جواد الحق":
+if selection == "عمر فاروق":
 #     st.sidebar.image("images/fakhra_TN.png")
     sheet = client.open("modified_data").get_worksheet(7)
     df = pd.DataFrame(sheet.get_all_records(),index=None)
