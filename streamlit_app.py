@@ -177,7 +177,7 @@ if selection == "نثار ماماخیل":
         st.sidebar.bar_chart(df1)
 
 if selection == "عمر فاروق":
-#     st.sidebar.image("images/fakhra_TN.png")
+    st.sidebar.image("images/umer_farooq_TN.png")
     sheet = client.open("modified_data").get_worksheet(7)
     df = pd.DataFrame(sheet.get_all_records(),index=None)
     csv=df.to_csv(index=False).encode('utf-8')
