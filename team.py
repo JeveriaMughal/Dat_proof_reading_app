@@ -94,7 +94,7 @@ def app():
     with column4:
         st.metric(label="Assigned Lines", value=str(len(corpus)), delta=None, delta_color="normal", help=None)
 
-    file1=open("master_data/jawad.en","r")
+    file1=open("master_data/jawad-en.txt","r")
     corpus=file1.readlines()
     
     column1,column2,column3,column4,cloumn5=st.columns([.5,2,1,2,1])
