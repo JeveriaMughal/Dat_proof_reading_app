@@ -93,3 +93,16 @@ def app():
         st.metric(label="Assigned Data Sets", value="1", delta="CORPUS", delta_color="normal", help=None)
     with column4:
         st.metric(label="Assigned Lines", value=str(len(corpus)), delta=None, delta_color="normal", help=None)
+
+    file1=open("master_data/jawad.en","r")
+    corpus=file1.readlines()
+    
+    column1,column2,column3,column4,cloumn5=st.columns([.5,2,1,2,1])
+    with column1:
+        st.image("images/umer_farooq_TN.png") 
+    with column2:
+        st.metric(label="DEO, NLPD", value="Umer Farooq", delta="Phase I Reviewer", delta_color="off", help=None)
+    with column3:
+        st.metric(label="Assigned Data Sets", value="1", delta="CORPUS", delta_color="normal", help=None)
+    with column4:
+        st.metric(label="Assigned Lines", value=str(len(corpus)), delta=None, delta_color="normal", help=None)
