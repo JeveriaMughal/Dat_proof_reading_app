@@ -563,7 +563,7 @@ To The Accountant General Pakistan Revenues, Islamabad.
 
 (date) .........
 No.........................
-Subject
+Subject:
 PURCHASE OF BOOKS.
 Dear Sir,
 I am directed to convey the sanction of the President of Pakistan to the purchase of books published by National Lanaguae Authority at a total cost not exceeding Rs. 5000/- (Rupees five thousand) only for the use of officers in this Division.
@@ -573,7 +573,7 @@ Yours Faithfully
 (Muhammad Akram)
 Section Officer
 Tel. No. .............    .
-Copy to
+Copy to:
 Deputy Financial Advisor (Cabinet)
 
 
@@ -639,9 +639,9 @@ No.11/2/81-Manuals
 
 Islamabad. the 15th August; 1981
 Office Memorandum
-Subject
+Subject:
 Institutional arrangements for more effective inspection and supervision of the Working of Secretariat and Attached Departments/Sub-ordinate offices
-The undersigned is directed to enclose an extract (annexure) from the recommendations made by the Secretaries Sub-Committee on Simplification of Forms and Procedure and to state that the Cabinet has taken the following decisions
+The undersigned is directed to enclose an extract (annexure) from the recommendations made by the Secretaries Sub-Committee on Simplification of Forms and Procedure and to state that the Cabinet has taken the following decisions:
 -
 All Secretaries incharge of Ministries/Divisions should be required to ensure strict observance of instructions about inspection as embodied in the Secretariat Instructions.
 Joint Secretary (Admn.) in each Ministry/ Division should be made responsible for this".
@@ -654,7 +654,7 @@ Director General
 All Ministries/ Divisions.
 (Joint Secretaries Incharge of Admn.)
 Rawalpindi/ Islamabad/ Karachi.
-Copy  for information and necessary action. to
+Copy  for information and necessary action. to:
 -
 The Chief Secretary,
 Government of Punjab, Lahore
@@ -679,7 +679,7 @@ This was primarily due to the reason that most of the time of the officers respo
 In certain cases, the Senior Officers who did not find time for inspection, deputed their subordinates to carry out inspection on their behalf.
 Moreover, the multiplicity of institutional arrangements to carry inspection e.g., Governor's Inspection Team, the Provincial Vigilance Commission, Divisional Vigilance Committee, and District Vigilance Committee etc., may create confusion with consequential blurring of the responsibility of each institution.
 The Committee was also informed of the cumbersome procedure for inspection, which usually render inspections more difficult and time consuming.
-After discussion, the Sub-Committee decided to make the following recommendations
+After discussion, the Sub-Committee decided to make the following recommendations:
 -
 (i) All Secretaries incharge of the Ministries/Divisions, should be requested to ensure that instructions about inspection, as embodied in the Secretariat Instructions were strictly followed.
 For this purpose the Joint Secretary (Admn.) in each Ministry/ Division should be made responsible to ensure compliance of the provisions of the Secretariat Instructions.
@@ -693,7 +693,7 @@ FINANCE DIVISION
 No. ......................
 Islamabad, .......................
 OFFICE MEMORANDUM
-Subject
+Subject:
 Revision of Leave Rules for Civil Servants.
 The undersigned is directed to refer to para 1 1of this Division's Office Memorandum No. ................, dated.................... on the subject mentioned above and to clarify that in case a civil servant on leave preparatory to retirement dies before completing 18 0days of such leave, his family shall be entitled to lump-sum payment equal to the period falling short of 18 0
 (Muhammad Ishaque)
@@ -704,7 +704,6 @@ All Ministries/Divisions
 Islamabad/Rawalpindi
 
 Memorandum
-
 
 
 
