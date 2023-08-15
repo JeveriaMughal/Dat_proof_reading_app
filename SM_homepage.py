@@ -5,7 +5,7 @@ def app():
     scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
     "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
 
-    file2=open("MC_URDU_SM.txt","r")
+    file2=open("master_data/MC_URDU_SM.txt","r")
     glossary=file2.readlines()
     column1,column2,column3=st.columns(3)
     with column1:

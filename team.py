@@ -61,7 +61,7 @@ def app():
     with column1:
          st.image("images/m_bugti_TN.png") 
     with column2:
-        st.metric(label="Deputy Director IT / Principle Investigator NLP-LAB", value="Mehboob Bugti", delta="Phase I Reviewer", delta_color="off", help=None)
+        st.metric(label="Deputy Director IT NLPD / Principle Investigator NLP-LAB", value="Mehboob Bugti", delta="Phase I Reviewer", delta_color="off", help=None)
     with column3:
         st.metric(label="Assigned Data Sets", value="1", delta="CORPUS", delta_color="normal", help=None)
     with column4:
