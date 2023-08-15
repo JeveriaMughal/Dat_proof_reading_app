@@ -13,7 +13,7 @@ def app():
     glossary=file1.readlines()
     column1,column2,column3,column4,cloumn5=st.columns([.5,2,1,2,1])
     with column2:
-        st.metric(label="Director General NLPD / Project Director NLP-Lab", value="Prof. Dr. Mohammad Saleem Mazhar", delta="Language Expert", delta_color="inverse", help=None)
+        st.metric(label="Director General NLPD / Project Director NLP-Lab", value="Prof. Dr. Mohd. Saleem Mazhar", delta="Language Expert", delta_color="inverse", help=None)
     with column3:
         st.metric(label="Assigned Data Sets", value="1", delta="GLOSSARY", delta_color="normal", help=None)
     with column4:
