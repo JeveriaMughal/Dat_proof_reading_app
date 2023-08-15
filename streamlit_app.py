@@ -193,7 +193,7 @@ if selection == "جواد الحق":
         chart_data=pd.DataFrame(columns=['index','date'])
         df1 = data['date'].value_counts()
         st.sidebar.bar_chart(df1)
-if selection == "ڈاکٹر راشد حمید":
+if selection == "پروفیسر ڈاکٹر محمد سلیم مظہر":
     st.sidebar.image("images/SM.png")   
     sheet = client.open("Data_review_phase2").get_worksheet(7)
 
