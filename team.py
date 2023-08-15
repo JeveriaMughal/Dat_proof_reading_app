@@ -9,6 +9,18 @@ def app():
     # Assign credentials ann path of style sheet
     creds = ServiceAccountCredentials.from_json_keyfile_name("proofreading-app-stats.json", scope)
     client = gspread.authorize(creds)
+    file1=open("master_data/MC_URDU_SM.txt","r")
+    glossary=file1.readlines()
+    column1,column2,column3,column4,cloumn5=st.columns([.5,2,1,2,1])
+    with column2:
+        st.metric(label="Director General NLPD / Project Director NLP-Lab", value="Prof. Dr. Mohammad Saleem Mazhar", delta="Language Expert", delta_color="inverse", help=None)
+    with column3:
+        st.metric(label="Assigned Data Sets", value="1", delta="GLOSSARY", delta_color="normal", help=None)
+    with column4:
+        st.metric(label="Assigned Lines", value="Glossary:"+ str(len(glossary)), delta=None, delta_color="normal", help=None)
+    with column1:
+        st.image("images/SM.png")
+
     sheet1 = client.open("modified_data").get_worksheet(0)
     df1 = pd.DataFrame(sheet1.get_all_records(),index=None)
     sheet2 = client.open("modified_data").get_worksheet(1)
@@ -21,7 +33,7 @@ def app():
     with column2:
         st.metric(label="Former Director General NLPD", value="Prof. Dr. Rauf Parekh", delta="Phase II Reviewer", delta_color="inverse", help=None)
     with column3:
-        st.metric(label="Assigned Data Sets", value="2", delta="GLOSSARY & CORPUS", delta_color="normal", help=None)
+        st.metric(label="Assigned Data Sets", value="3", delta="GLOSSARY & CORPUS", delta_color="normal", help=None)
     with column4:
         st.metric(label="Assigned Lines", value="Glossary:"+ str(len(glossary))+"|"+"Corpus:"+str(len(df1)+len(df2)), delta=None, delta_color="normal", help=None)
     with column1:
@@ -37,9 +49,9 @@ def app():
     with column1:
         st.image("images/dr_rashid_TN.png")
     with column2:
-        st.metric(label="Director General, NLPD", value="Dr. Rashid Hameed", delta="Phase II Reviewer", delta_color="inverse", help=None)
+        st.metric(label="Executive Director NLPD", value="Dr. Rashid Hameed", delta="Phase II Reviewer", delta_color="inverse", help=None)
     with column3:
-        st.metric(label="Assigned Data Sets", value="1", delta="GLOSSARY & CORPUS", delta_color="normal", help=None)
+        st.metric(label="Assigned Data Sets", value="3", delta="GLOSSARY & CORPUS", delta_color="normal", help=None)
     with column4:
         st.metric(label="Assigned Lines",value="Glossary:"+ str(len(glossary))+"|"+"Corpus:"+str(len(df3)+len(df4)), delta=None, delta_color="normal", help=None)
     
@@ -49,7 +61,7 @@ def app():
     with column1:
          st.image("images/m_bugti_TN.png") 
     with column2:
-        st.metric(label="Principle Investigator, NLP-LAB", value="Mehboob Bugti", delta="Phase I Reviewer", delta_color="off", help=None)
+        st.metric(label="Deputy Director IT / Principle Investigator NLP-LAB", value="Mehboob Bugti", delta="Phase I Reviewer", delta_color="off", help=None)
     with column3:
         st.metric(label="Assigned Data Sets", value="1", delta="CORPUS", delta_color="normal", help=None)
     with column4:
@@ -61,7 +73,7 @@ def app():
     with column1:
          st.image("images/fakhra_TN.png") 
     with column2:
-        st.metric(label="Team Member (Language), NLP-LAB", value="Fakhra Munawar", delta="Phase I Reviewer", delta_color="off", help=None)
+        st.metric(label="Team Member (Language) NLP-LAB", value="Fakhra Munawar", delta="Phase I Reviewer", delta_color="off", help=None)
     with column3:
         st.metric(label="Assigned Data Sets", value="1", delta="CORPUS", delta_color="normal", help=None)
     with column4:
@@ -75,7 +87,7 @@ def app():
     with column1:
         st.image("images/TF_TN.png") 
     with column2:
-        st.metric(label="Assistant informatics Officer, NLPD", value="Tanveer Fatima", delta="Phase I Reviewer", delta_color="off", help=None)
+        st.metric(label="Assistant informatics Officer NLPD", value="Tanveer Fatima", delta="Phase I Reviewer", delta_color="off", help=None)
     with column3:
         st.metric(label="Assigned Data Sets", value="1", delta="CORPUS", delta_color="normal", help=None)
     with column4:
@@ -88,20 +100,7 @@ def app():
     with column1:
         st.image("images/NMK.png") 
     with column2:
-        st.metric(label="Programmer, NLPD", value="Nisar Mamakhel", delta="Phase I Reviewer", delta_color="off", help=None)
-    with column3:
-        st.metric(label="Assigned Data Sets", value="1", delta="CORPUS", delta_color="normal", help=None)
-    with column4:
-        st.metric(label="Assigned Lines", value=str(len(corpus)), delta=None, delta_color="normal", help=None)
-
-    file1=open("master_data/jawad-en.txt","r")
-    corpus=file1.readlines()
-    
-    column1,column2,column3,column4,cloumn5=st.columns([.5,2,1,2,1])
-    with column1:
-        st.image("images/umer_farooq_TN.png") 
-    with column2:
-        st.metric(label="DEO, NLPD", value="Umer Farooq", delta="Phase I Reviewer", delta_color="off", help=None)
+        st.metric(label="Programmer NLPD", value="Nisar Mamakhel", delta="Phase I Reviewer", delta_color="off", help=None)
     with column3:
         st.metric(label="Assigned Data Sets", value="1", delta="CORPUS", delta_color="normal", help=None)
     with column4:

@@ -1,5 +1,5 @@
 import streamlit as st
-import fakhra_homepage,m_bugti_homepage,RP,rashid_hameed_homepage,homepage,tanveer_fatima_homepage,nisar_MK_homepage,jawad_homepage
+import fakhra_homepage,m_bugti_homepage,RP,rashid_hameed_homepage,homepage,tanveer_fatima_homepage,nisar_MK_homepage,jawad_homepage,SM_homepage
 import pandas as pd
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
@@ -16,14 +16,15 @@ creds = ServiceAccountCredentials.from_json_keyfile_name("blank-test-363706-5265
 client = gspread.authorize(creds)
 
 PAGES = {"":homepage,
+        "پروفیسر ڈاکٹر محمد سلیم مظہر":SM_homepage,
         "پروفیسر ڈاکٹر رؤف پاریکھ":RP,
         "ڈاکٹر راشد حمید":rashid_hameed_homepage,
         "محبوب بگٹی":m_bugti_homepage,
         "فاخرہ منور": fakhra_homepage,
         "تنویر فاطمہ":tanveer_fatima_homepage,
         "نثار ماماخیل":nisar_MK_homepage,
-        "عمر فاروق":jawad_homepage}
-st.sidebar.title("NLP-LAB \n Data Development Application")
+        "جواد الحق":jawad_homepage}
+st.sidebar.title("NLP-LAB \n Proofreading Application")
 selection = st.sidebar.selectbox("نام",list (PAGES.keys()))
 if selection == "فاخرہ منور":
     st.sidebar.image("images/fakhra_TN.png")
@@ -176,8 +177,8 @@ if selection == "نثار ماماخیل":
         df1 = data['date'].value_counts()
         st.sidebar.bar_chart(df1)
 
-if selection == "عمر فاروق":
-    st.sidebar.image("images/umer_farooq_TN.png")
+if selection == "جواد الحق":
+#     st.sidebar.image("images/fakhra_TN.png")
     sheet = client.open("modified_data").get_worksheet(7)
     df = pd.DataFrame(sheet.get_all_records(),index=None)
     csv=df.to_csv(index=False).encode('utf-8')
@@ -192,6 +193,23 @@ if selection == "عمر فاروق":
         chart_data=pd.DataFrame(columns=['index','date'])
         df1 = data['date'].value_counts()
         st.sidebar.bar_chart(df1)
+if selection == "ڈاکٹر راشد حمید":
+    st.sidebar.image("images/SM.png")   
+    sheet = client.open("Data_review_phase2").get_worksheet(7)
+
+    df_all = pd.DataFrame(sheet.get_all_records(),index=None)
+    data=df_all
+    if len(df_all.index)>1:
+        chart_data=pd.DataFrame(columns=['index','date'])
+        df1 = data['date'].value_counts()
+        st.sidebar.bar_chart(df1)
+    csv=df_all.to_csv(index=False).encode('utf-8')
+    st.sidebar.download_button(
+            "Download Reviewed GLOSSARY",
+            csv,
+            "reviwed_GLOSSARY.csv",
+            "text/csv",
+            key='download-csv-SM')
 
 page= PAGES[selection]
 page.app()
