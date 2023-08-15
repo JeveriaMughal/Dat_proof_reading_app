@@ -7,7 +7,7 @@ def app():
     scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
     "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
     # Assign credentials ann path of style sheet
-    creds = ServiceAccountCredentials.from_json_keyfile_name("proofreading-app-stats.json", scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name("proofreading-app-dr-rp.json", scope)
     client = gspread.authorize(creds)
     file1=open("master_data/MC_URDU_SM.txt","r")
     glossary=file1.readlines()
