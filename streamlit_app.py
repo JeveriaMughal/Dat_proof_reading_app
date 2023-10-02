@@ -23,7 +23,7 @@ PAGES = {"":homepage,
         "فاخرہ منور": fakhra_homepage,
         "تنویر فاطمہ":tanveer_fatima_homepage,
         "نثار ماماخیل":nisar_MK_homepage,
-        "جواد الحق":jawad_homepage}
+        "محمد فاروق":jawad_homepage}
 st.sidebar.title("NLP-LAB \n Data Development Application")
 selection = st.sidebar.selectbox("نام",list (PAGES.keys()))
 if selection == "فاخرہ منور":
